@@ -1,26 +1,61 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": "./src",
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@_types/*": ["_types/*"],
+      "@/animation/*": ["animation/*"],
+      "@/companies/*": ["assets/companies/*"],
+      "@/icons/*": ["assets/icons/*"],
+      "@/sounds/*": ["assets/sounds/*"],
+      "@/projects/*": ["assets/projects/*"],
+      "@/assets/*": ["assets/*"],
+      "@/broadcasts/*": ["components/broadcasts/*"],
+      "@/common/*": ["components/common/*"],
+      "@/chat/*": ["components/conversations/chat/*"],
+      "@/conversations-list/*": [
+        "components/conversations/conversations-list/*"
+      ],
+      "@/others/*": ["components/others/*"],
+      "@/settings/*": ["components/settings/*"],
+      "@/sign-in/*": ["components/sign-in/*"],
+      "@/svg/*": ["components/svg/*"],
+      "@/ui/*": ["components/ui/*"],
+      "@/components/*": ["components/*"],
+      "@/context/*": ["context/*"],
+      "@/global/*": ["global/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/lib/*": ["lib/*"],
+      "@/utils/*": ["utils/*"],
+      "@/providers/*": ["providers/*"],
+      "@/constants/*": ["constants/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/**/*.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
