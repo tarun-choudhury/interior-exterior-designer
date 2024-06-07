@@ -22,6 +22,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@/db/*": ["database/*"],
       "@_types/*": ["_types/*"],
       "@/animation/*": ["animation/*"],
       "@/companies/*": ["assets/companies/*"],
