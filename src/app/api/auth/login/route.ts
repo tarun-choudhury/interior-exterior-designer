@@ -1,5 +1,4 @@
 // import Item from "@/models/item";
-import bcryptjs from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -7,7 +6,7 @@ import connect from '@/db/db-config'
 
 connect()
 
-export async function post(request: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json()
     const { email, password } = reqBody
@@ -17,12 +16,12 @@ export async function post(request: NextRequest) {
         message: 'Email and password are required',
         success: false
       })
-    else if (email != process.env.EMAIL)
+    else if (email != process.env.EMAIL!)
       return NextResponse.json({
         message: 'Incorrect Email',
         success: false
       })
-    else if (!bcryptjs.compareSync(password, process.env.PASSWORD))
+    else if (password !== process.env.PASSWORD!)
       return NextResponse.json({
         message: 'Incorrect Password',
         success: false
