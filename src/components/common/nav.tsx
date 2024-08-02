@@ -32,7 +32,7 @@ const Nav = () => {
         )}
         {token && (
           <div className="flex gap-4">
-            <Link className="hover:text-gray-300" href="/add-item">
+            <Link className="hover:text-gray-300" href="/create-item">
               Add Item
             </Link>
             <Link className="hover:text-gray-300" href="/del-item">
