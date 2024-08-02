@@ -2,10 +2,12 @@
 import Link from 'next/link'
 
 import useLogout from '@/hooks/use-logout'
+import clientToken from '@/utils/get-client-token'
 
 const Nav = () => {
   const { loading, logout } = useLogout()
-  const token = document.cookie.split(';').find((cookie) => cookie.includes('token'))?.split('=')[1]
+  const token = clientToken()
+  console.log('token', token)
   const handleSubmit = async () => {
     console.log('logout/ui')
     await logout()
@@ -35,7 +37,7 @@ const Nav = () => {
             <Link className="hover:text-gray-300" href="/create-item">
               Add Item
             </Link>
-            <Link className="hover:text-gray-300" href="/del-item">
+            <Link className="hover:text-gray-300" href="/delete-item">
               Delete Item
             </Link>
             <button

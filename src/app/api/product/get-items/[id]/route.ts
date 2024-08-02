@@ -11,6 +11,23 @@ export async function GET(request: NextRequest) {
     const id = request.url.split('/').pop()
     console.log('id', id)
 
+    if (id === 'delete-item') {
+      const items = await Item.find()
+
+      if (!items) {
+        const response = { message: 'No items found', success: false }
+        return NextResponse.json(response)
+      }
+
+      const response = {
+        message: 'Items retrieved successfully',
+        success: true,
+        items: items
+      }
+
+      return NextResponse.json(response)
+    }
+
     const items = await Item.find({ category: id })
     console.log('Items', items)
 
