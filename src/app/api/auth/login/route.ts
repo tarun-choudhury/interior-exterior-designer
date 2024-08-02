@@ -29,8 +29,7 @@ export async function POST(request: NextRequest) {
 
     //create token data
     const tokenData = {
-      email,
-      password
+      email
     }
     //create token
     const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
@@ -41,9 +40,7 @@ export async function POST(request: NextRequest) {
       message: 'Login successful',
       success: true
     })
-    response.cookies.set('token', token, {
-      httpOnly: true
-    })
+    response.cookies.set('token', token)
     return response
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 })

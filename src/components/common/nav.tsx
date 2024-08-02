@@ -1,12 +1,11 @@
 'use client'
-import useAdminState from '@/context/admin-zustand'
 import Link from 'next/link'
 
 import useLogout from '@/hooks/use-logout'
 
 const Nav = () => {
   const { loading, logout } = useLogout()
-  const { admin }: any = useAdminState()
+  const token = document.cookie.split(';').find((cookie) => cookie.includes('token'))?.split('=')[1]
   const handleSubmit = async () => {
     console.log('logout/ui')
     await logout()
@@ -18,7 +17,7 @@ const Nav = () => {
         Interior Exterior Designer
       </Link>
       <div className="">
-        {!admin && (
+        {!token && (
           <div className="flex gap-4">
             <Link className="hover:text-gray-300" href="/catalogue">
               Catalogue
@@ -31,7 +30,7 @@ const Nav = () => {
             </Link>
           </div>
         )}
-        {admin && (
+        {token && (
           <div className="flex gap-4">
             <Link className="hover:text-gray-300" href="/add-item">
               Add Item

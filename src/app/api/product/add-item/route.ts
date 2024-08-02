@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 import connect from '@/db/db-config'
+import Category from '@/models/category'
 import Item from '@/models/item'
 
 connect()
@@ -18,16 +19,25 @@ export async function POST(request: NextRequest) {
         success: false
       })
 
+    let categoryCluster = await Category.findOne({ name: category })
+
+    if (!categoryCluster) {
+      categoryCluster = await Category.create({ name: category })
+      await categoryCluster.save()
+    }
+
     const item = new Item({
       title,
       price,
-      description: desc,
+      desc,
       category
     })
     console.log('before if in api add-item')
     if (item) {
+      categoryCluster.items.push(item._id)
       console.log('Item added')
       await item.save()
+      await categoryCluster.save()
 
       const response = NextResponse.json({
         message: 'Item added successfully',
