@@ -2,12 +2,10 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
-import useAdminState from '@/context/admin-zustand'
 
 const useLogin = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
-  const {adminLogin}: any = useAdminState()
 
   const login = async (data: { email: string; password: string }) => {
     setLoading(true)
@@ -16,7 +14,6 @@ const useLogin = () => {
       if (response.data.error) throw new Error(response.data.error)
       if (response.data.success !== true) throw new Error(response.data.message)
       console.log('Login successful', response.data)
-      adminLogin();
       toast.success('Login successful')
       router.push('/add-item')
     } catch (error: any) {

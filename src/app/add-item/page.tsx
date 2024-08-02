@@ -78,15 +78,15 @@ const AddItem = () => {
             }
           >
             <option value="kitchen">Kitchen</option>
-            <option value="living room">Living Room</option>
-            <option value="dining room">Dining Room</option>
-            <option value="dressing room">Dressing Room</option>
-            <option value="bed room">Bed Room</option>
-            <option value="study room">Study Room</option>
-            <option value="office room">Office Room</option>
-            <option value="painting work">Painting Work</option>
-            <option value="false ceiling">False Ceiling</option>
-            <option value="door panelling">Door Panelling</option>
+            <option value="living-room">Living Room</option>
+            <option value="dining-room">Dining Room</option>
+            <option value="dressing-room">Dressing Room</option>
+            <option value="bed-room">Bed Room</option>
+            <option value="study-room">Study Room</option>
+            <option value="office-room">Office Room</option>
+            <option value="painting-work">Painting Work</option>
+            <option value="false-ceiling">False Ceiling</option>
+            <option value="door-panelling">Door Panelling</option>
             <option value="louver">Louver</option>
             <option value="renovation">Renovation</option>
           </select>
