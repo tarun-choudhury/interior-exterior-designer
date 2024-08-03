@@ -15,7 +15,7 @@ const useAddItem = () => {
   const addItem = async (data: AddItemData) => {
     setLoading(true)
     try {
-      const response = await axios.post('/api/product/add-item', data)
+      const response = await axios.post('/api/items/add-item', data)
       if (response.data.error) throw new Error(response.data.error)
       if (response.data.success !== true) throw new Error(response.data.message)
       console.log('Item added successfully', response.data)

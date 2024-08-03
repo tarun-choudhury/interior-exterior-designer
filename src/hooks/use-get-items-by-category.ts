@@ -9,7 +9,7 @@ const useGetItemsByCat = (id: any) => {
     const getItems = async () => {
       setLoading(true)
       try {
-        const response = await axios.get(`/api/product/get-items/${id}`)
+        const response = await axios.get(`/api/items/get-items/${id}`)
         if (response.data.error) throw new Error(response.data.error)
         if (response.data.success !== true)
           throw new Error(response.data.message)

@@ -10,7 +10,7 @@ const useGetAllItems = () => {
       setLoading(true)
 
       try {
-        const response = await axios.get(`/api/product/get-items`)
+        const response = await axios.get(`/api/items/get-items`)
 
         if (response.data.error) throw new Error(response.data.error)
         if (response.data.success !== true)
