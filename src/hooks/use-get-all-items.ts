@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-const useGetAllItems = () => {
+const useGetAllItems = ( reload: boolean ) => {
   const [loading, setLoading] = useState(false)
   const [items, setItems] = useState([])
 
@@ -25,7 +25,7 @@ const useGetAllItems = () => {
       }
     }
     getItems()
-  }, [])
+  }, [reload])
 
   return { loading, items }
 }
