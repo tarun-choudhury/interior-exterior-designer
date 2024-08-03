@@ -1,18 +1,21 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-const useGetItem = (id: any) => {
+const useGetAllItems = ( reload: boolean ) => {
   const [loading, setLoading] = useState(false)
   const [items, setItems] = useState([])
 
   useEffect(() => {
     const getItems = async () => {
       setLoading(true)
+
       try {
-        const response = await axios.get(`/api/product/get-items/${id}`)
+        const response = await axios.get(`/api/items/get-items`)
+
         if (response.data.error) throw new Error(response.data.error)
         if (response.data.success !== true)
           throw new Error(response.data.message)
+
         console.log('Items fetched', response.data.items)
         setItems(response.data.items)
       } catch (error: any) {
@@ -22,9 +25,9 @@ const useGetItem = (id: any) => {
       }
     }
     getItems()
-  }, [id])
+  }, [reload])
 
   return { loading, items }
 }
 
-export default useGetItem
+export default useGetAllItems
