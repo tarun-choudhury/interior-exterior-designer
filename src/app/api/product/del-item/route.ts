@@ -17,6 +17,6 @@ export async function DELETE(request: NextRequest) {
     }
     return NextResponse.json(response)
   } catch (error: any) {
-    return NextResponse.json({ error: error }, { status: 500 })
+    return NextResponse.json({ error: error.message }, { status: 500 })
   }
 }

@@ -1,12 +1,12 @@
 'use client'
 import { usePathname } from 'next/navigation'
 
-import useGetItem from '@/hooks/use-get-item'
+import useGetItemsByCat from '@/hooks/use-get-items-by-category'
 
 const Page = () => {
   const pathname = usePathname()
   const id = pathname.split('/').pop()
-  const { loading, items } = useGetItem(id)
+  const { loading, items } = useGetItemsByCat(id)
 
   return (
     <div>

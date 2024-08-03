@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-const useGetItem = (id: any) => {
+const useGetItemsByCat = (id: any) => {
   const [loading, setLoading] = useState(false)
   const [items, setItems] = useState([])
 
@@ -27,4 +27,4 @@ const useGetItem = (id: any) => {
   return { loading, items }
 }
 
-export default useGetItem
+export default useGetItemsByCat

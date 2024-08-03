@@ -1,12 +1,9 @@
 'use client'
-import { usePathname } from 'next/navigation'
 
-import useGetItem from '@/hooks/use-get-item'
+import useGetAllItems from "@/hooks/use-get-all-items"
 
 const DelItem = () => {
-  const pathname = usePathname()
-  const id = pathname.split('/').pop()
-  const { loading, items } = useGetItem(id)
+  const { loading, items } = useGetAllItems()
   return (
     <div>
       {items.map((item: any) => (

@@ -1,18 +1,19 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
 import connect from '@/db/db-config'
 import Item from '@/models/item'
 
 connect()
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    console.log('Inside GET in api items [id]')
-    const id = request.url.split('/').pop()
-    console.log('id', id)
+    console.log('Inside GET in api items')
+    const items = await Item.find()
 
-    const items = await Item.find({ category: id })
-    console.log('Items', items)
+    if (!items) {
+      const response = { message: 'No items found', success: false }
+      return NextResponse.json(response)
+    }
 
     const response = {
       message: 'Items retrieved successfully',
