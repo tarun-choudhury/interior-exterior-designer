@@ -11,7 +11,7 @@ const DelItem = () => {
   const { loading: delLoading, delItems } = useDelItems()
   const [selectedIds, setSelectedIds] = useState([])
 
-  const handleSelect = (id: any) => {
+  const handleSelect = (id: never) => {
     if (selectedIds.includes(id)) {
       setSelectedIds(selectedIds.filter((i) => i !== id))
     } else {
@@ -34,16 +34,16 @@ const DelItem = () => {
         {items.map((item: any) => (
           <li key={item._id}>
             <input
-              checked={selectedIds.includes(item._id)}
+              checked={selectedIds.includes(item._id as never)}
               type="checkbox"
               value={item._id}
-              onChange={() => handleSelect(item._id)}
+              onChange={() => handleSelect(item._id as never)}
             />
             {item.title} - {item.price} - {item.category}
           </li>
         ))}
       </ul>
-      <button onClick={handleDelete} type="submit">
+      <button type="submit" onClick={handleDelete}>
         {delLoading ? 'loading' : 'Delete Selected Items'}
       </button>
       {getLoading ? 'loading Items' : null}
