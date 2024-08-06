@@ -2,16 +2,23 @@ import { NextRequest, NextResponse } from 'next/server'
 
 import connect from '@/db/db-config'
 import Item from '@/models/item'
+import deleteImg from 'helpers/delete-img'
 
 connect()
 
 export async function POST(request: NextRequest) {
   try {
     console.log('inside DELETE in api items')
-    const itemIds = await request.json()
+    const { itemIds, publicIds } = await request.json()
     console.log('itemIds:', itemIds)
+    console.log('publicIds:', publicIds)
 
-    if (!itemIds || itemIds.length === 0) {
+    if (
+      !itemIds ||
+      !publicIds ||
+      itemIds.length === 0 ||
+      publicIds.length === 0
+    ) {
       const response = {
         message: 'No items selected',
         success: false
@@ -20,6 +27,14 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('itemIds:', itemIds)
+    console.log('publicIds:', publicIds)
+
+    publicIds.forEach(async (public_id: string) => {
+      const response = await deleteImg(public_id)
+      if (response !== 'ok') {
+        throw new Error('Image deletion failed')
+      }
+    })
 
     await Item.deleteMany({ _id: { $in: itemIds } })
 

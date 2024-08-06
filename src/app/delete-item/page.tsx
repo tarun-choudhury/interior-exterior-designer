@@ -11,20 +11,24 @@ const DelItem = () => {
   const { loading: getLoading, items } = useGetAllItems(reload)
   const { loading: delLoading, delItems } = useDelItems()
   const [selectedIds, setSelectedIds] = useState([])
+  const [selectedPublicIds, setSelectedPublicIds] = useState([])
 
-  const handleSelect = (id: never) => {
-    if (selectedIds.includes(id)) {
+  const handleSelect = (id: never, publicId: never) => {
+    if (selectedIds.includes(id) && selectedPublicIds.includes(publicId)) {
       setSelectedIds(selectedIds.filter((i) => i !== id))
+      setSelectedPublicIds(selectedPublicIds.filter((i) => i !== publicId))
     } else {
       setSelectedIds([...selectedIds, id])
+      setSelectedPublicIds([...selectedPublicIds, publicId])
     }
   }
 
   const handleDelete = async () => {
     console.log(selectedIds)
-    if (selectedIds.length === 0) return
+    console.log(selectedPublicIds)
+    if (selectedIds.length === 0 || selectedPublicIds.length === 0) return
 
-    await delItems({ itemIds: selectedIds, setSelectedIds })
+    await delItems({ itemIds: selectedIds, publicIds: selectedPublicIds, setSelectedIds })
     setReload(!reload)
   }
 
@@ -38,7 +42,7 @@ const DelItem = () => {
               checked={selectedIds.includes(item._id as never)}
               type="checkbox"
               value={item._id}
-              onChange={() => handleSelect(item._id as never)}
+              onChange={() => handleSelect(item._id as never, item.public_id as never)}
             />
             {item.title} - {item.price} - {item.category}
             <Image
