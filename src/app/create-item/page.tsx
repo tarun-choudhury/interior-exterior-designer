@@ -3,8 +3,17 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 
 import useAddItem from '@/hooks/use-add-item'
 
+interface Inputs {
+  image: File | null
+  title: string
+  price: number
+  desc: string
+  category: string
+}
+
 const AddItem = () => {
-  const [inputs, setInputs] = useState({
+  const [inputs, setInputs] = useState<Inputs>({
+    image: null,
     title: '',
     price: 0,
     desc: '',
@@ -15,12 +24,35 @@ const AddItem = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault
     console.log(inputs)
-    await addItem(inputs)
+
+    const formData = new FormData(e.currentTarget)
+    formData.append('image', inputs.image as Blob)
+    formData.append('title', inputs.title)
+    formData.append('price', String(inputs.price))
+    formData.append('desc', inputs.desc)
+    formData.append('category', inputs.category)
+    console.log('formData', formData)
+    await addItem(formData)
   }
 
   return (
     <section>
       <form className="space-y-4 pb-1" onSubmit={handleSubmit}>
+        <label className="block">
+          <span className="mb-1 block text-xs font-medium text-custG">
+            Product Image
+          </span>
+          <input
+            required
+            className="form-input rounded-none"
+            type="file"
+            // value={inputs.image}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              e.target.files &&
+              setInputs({ ...inputs, image: e.target.files[0] })
+            }
+          />
+        </label>
         <label className="block">
           <span className="mb-1 block text-xs font-medium text-custG">
             Product Title

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 
 import useDelItems from '@/hooks/use-del-items'
@@ -40,6 +41,12 @@ const DelItem = () => {
               onChange={() => handleSelect(item._id as never)}
             />
             {item.title} - {item.price} - {item.category}
+            <Image
+              alt={item.title}
+              height={300}
+              src={item.image_url}
+              width={300}
+            />
           </li>
         ))}
       </ul>
