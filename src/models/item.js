@@ -1,6 +1,14 @@
 import mongoose from 'mongoose'
 
 const itemSchema = new mongoose.Schema({
+  image_url: {
+    type: String,
+    required: true
+  },
+  public_id: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true

@@ -3,21 +3,41 @@ import { NextRequest, NextResponse } from 'next/server'
 import connect from '@/db/db-config'
 import Category from '@/models/category'
 import Item from '@/models/item'
+import uploadImg from 'helpers/upload-img'
 
 connect()
 
 export async function POST(request: NextRequest) {
   try {
     console.log('Inside POST in api add-item')
-    const reqBody = await request.json()
-    const { title, price, desc, category } = reqBody
-    console.log('reqBody', reqBody)
 
-    if (!title || !price || !desc || !category)
+    // const form = new formidable.IncomingForm()
+    // console.log(await request.formData())
+    const form = await request.formData()
+    console.log('form', form)
+    const image = form.get('image') as File
+    const title = form.get('title') as string
+    const price = form.get('price') as unknown as number
+    const desc = form.get('desc') as string
+    const category = form.get('category') as string
+
+    if (!image || !title || !price || !desc || !category)
       return NextResponse.json({
-        message: 'Name, price, description, and category are required',
+        message:
+          'Image, name, price, description, and category are all required',
         success: false
       })
+
+    const data: any = await uploadImg({ file: image, folder: 'items' })
+
+    console.log('data', data)
+
+    // const response = NextResponse.json({
+    //   message: data,
+    //   success: true
+    // })
+
+    // return response
 
     let categoryCluster = await Category.findOne({ name: category })
 
@@ -27,6 +47,8 @@ export async function POST(request: NextRequest) {
     }
 
     const item = new Item({
+      image_url: data.secure_url,
+      public_id: data.public_id,
       title,
       price,
       desc,
