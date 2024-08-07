@@ -19,6 +19,7 @@
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "kutty": "^0.6.0",
+    "lucide-react": "^0.424.0",
     "mongoose": "^8.4.1",
     "next": "14.2.3",
     "next-cloudinary": "^6.9.0",

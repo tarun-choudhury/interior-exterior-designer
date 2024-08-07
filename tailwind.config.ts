@@ -15,6 +15,11 @@ const config: Config = {
           DEFAULT: '#984447', // Normal primary color
           dark: '#984447' // Used for hover, active, etc.
         },
+        secondary: {
+          light: '#717568', // For lighter primary color
+          DEFAULT: '#fdfd96', // Normal primary color
+          dark: '#fdfd96' // Used for hover, active, etc.
+        },
         custW: '#FFFFFF',
         custS: '#f8f8f8',
         custB: '#0d1b1e',
