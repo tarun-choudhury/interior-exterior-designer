@@ -1,13 +1,16 @@
 import Link from 'next/link'
 
 import Dot from 'svg/dot'
-const Footer = () => {
+
+import { links } from './footer-links.json'
+
+const Footer = async () => {
   return (
-    <footer className="w-full mb-auto bg-custB text-white">
+    <footer className="mb-auto w-full bg-custT text-custB">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-6">
-        <div className="col-span-2 my-20 gap-2 flex flex-col px-10 md:col-span-2">
+        <div className="col-span-2 my-20 flex flex-col gap-2 px-10 md:col-span-2">
           <Link
-            className="mb-3 w-fit text-3xl uppercase tracking-wider transition hover:text-primary md:mb-2"
+            className="mb-3 w-fit text-3xl uppercase tracking-wider text-primary transition md:mb-2"
             href=""
           >
             Interior Exterior Designer
@@ -34,89 +37,42 @@ const Footer = () => {
               IndiaMart
             </Link>
           </div>
-          <div className="text-xs flex flex-col gap-1">
-
-          <p>tarun.choudhury@interior-designers.in</p>
-          <p>+91 90079 92282</p>
-          <p>+91 97481 13277</p>
+          <div className="flex flex-col gap-1 text-xs">
+            <p>tarun.choudhury@interior-designers.in</p>
+            <p>+91 90079 92282</p>
+            <p>+91 97481 13277</p>
           </div>
         </div>
         <nav className="my-20 flex flex-col">
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Kitchen
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Living Room
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Dining Room
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Dressing Room
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Bed Room
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Study Room
-          </Link>
+          {links.map((i) => {
+            return (
+              i.index < 6 && (
+                <Link
+                  key={i.index}
+                  className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
+                  href={i.href}
+                >
+                  {i.title}
+                </Link>
+              )
+            )
+          })}
         </nav>
 
         <nav className="my-20 flex flex-col">
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Office Room
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Painting Work
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            False Ceiling
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Door Panelling
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Louver
-          </Link>
-          <Link
-            className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-            href=""
-          >
-            Renovation
-          </Link>
+          {links.map((i) => {
+            return (
+              i.index >= 6 && (
+                <Link
+                  key={i.index}
+                  className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
+                  href={i.href}
+                >
+                  {i.title}
+                </Link>
+              )
+            )
+          })}
         </nav>
         <div className="col-span-2">
           <iframe
