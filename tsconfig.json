@@ -48,6 +48,7 @@
       "@/hooks/*": ["hooks/*"],
       "@/lib/*": ["lib/*"],
       "@/utils/*": ["utils/*"],
+      "@/json/*": ["json/*"],
       "@/providers/*": ["providers/*"],
       "@/constants/*": ["constants/*"]
     }

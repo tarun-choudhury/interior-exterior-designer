@@ -22,6 +22,7 @@ const config: Config = {
         },
         custW: '#FFFFFF',
         custS: '#f8f8f8',
+        custT: '#E1E3E3',
         custB: '#0d1b1e',
         custR: '#984447',
         custG: '#717568',
