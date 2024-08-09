@@ -1,10 +1,9 @@
 import Link from 'next/link'
 
+import { links } from '@/json/links.json'
 import Dot from 'svg/dot'
 
-import { links } from './footer-links.json'
-
-const Footer = async () => {
+const Footer = () => {
   return (
     <footer className="mb-auto w-full bg-custT text-custB">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-6">
