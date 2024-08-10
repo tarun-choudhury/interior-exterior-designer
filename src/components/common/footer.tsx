@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-import { links } from '@/json/links.json'
-import Dot from 'svg/dot'
+import { links } from '@/assets/json/links.json'
+import Dot from '@/assets/svg/dot'
 
 const Footer = () => {
   return (
