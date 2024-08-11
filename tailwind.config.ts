@@ -4,6 +4,11 @@ const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--julius-sans-one)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['var(--merriweather)', 'Georgia', 'ui-serif', 'serif'],
+        mono: ['ui-monospace', 'monospace']
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

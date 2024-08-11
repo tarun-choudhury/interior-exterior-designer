@@ -40,7 +40,7 @@
       "@/others/*": ["components/others/*"],
       "@/settings/*": ["components/settings/*"],
       "@/sign-in/*": ["components/sign-in/*"],
-      "@/svg/*": ["components/svg/*"],
+      "@/svg/*": ["svg/*"],
       "@/ui/*": ["components/ui/*"],
       "@/components/*": ["components/*"],
       "@/context/*": ["context/*"],
