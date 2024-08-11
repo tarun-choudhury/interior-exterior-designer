@@ -1,11 +1,20 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Julius_Sans_One, Merriweather } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
 import Nav from '@/common/nav'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const juliusSansOne = Julius_Sans_One({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--julius-sans-one'
+})
+const merriweather = Merriweather({
+  weight: ['300', '400', '700', '900'],
+  subsets: ['latin'],
+  variable: '--merriweather'
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,7 +28,9 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${juliusSansOne.variable} ${merriweather.variable} font-sans`}
+      >
         <Nav />
         {children}
         <Toaster />

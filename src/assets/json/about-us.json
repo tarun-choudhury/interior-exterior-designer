@@ -1,0 +1,88 @@
+{
+  "aboutUs": {
+    "title": "About Us",
+    "desc": "Welcome to Interior Exterior Designer, your premier destination for bespoke furniture painting, and renovation services.\nWith over 18 years of experience, we have established ourselves as a trusted name in the industry, delivering unparalleled craftsmanship and exceptional service. and In service"
+  },
+  "ourExpertise": {
+    "title": "Our Expertise",
+    "desc": "At Interior Exterior Designer, we specialize in a wide range of services to transform your spaces into stunning, functional areas that reflect your unique style and needs. Our offerings include:",
+    "list": [
+      {
+        "title": "Custom Furniture Manufacturing: ",
+        "desc": "From living rooms to office spaces, we create tailored furniture pieces for every room, including kitchens, dining rooms, dressing rooms, bedrooms, and study rooms."
+      },
+      {
+        "title": "Painting Works: ",
+        "desc": "Our skilled painters bring your walls to life with vibrant colors and expert finishes."
+      },
+      {
+        "title": "Renovation Works: ",
+        "desc": "We undertake comprehensive renovation projects to revamp your spaces, enhancing both aesthetics and functionality."
+      },
+      {
+        "title": "Civil Works: ",
+        "desc": "Our team handles all aspects of civil construction, ensuring structural integrity and superior quality."
+      },
+      {
+        "title": "False Ceilings: ",
+        "desc": "We design and install elegant false ceilings that add a touch of sophistication to your interiors."
+      },
+      {
+        "title": "Door Panellings: ",
+        "desc": "Our custom door paneling services offer an elegant solution to elevate the look of your doors."
+      },
+      {
+        "title": "Wall Louvers: ",
+        "desc": "We provide stylish wall louvers that enhance the visual appeal and functionality of your walls."
+      },
+      {
+        "title": "Full Room Furnishing: ",
+        "desc": "We offer complete furnishing solutions to make your rooms comfortable and stylish."
+      }
+    ]
+  },
+  "ourProcess": {
+    "title": "Our Process",
+    "list": [
+      "Our process is designed to ensure maximum satisfaction and convenience for our clients.",
+      "We begin with an on-site visit to take precise measurements and understand your specific requirements.",
+      "Our team then collaborates with you to create custom designs that align with your vision.",
+      "Once the designs are finalized, we manufacture the products with meticulous attention to detail and deliver them to your doorstep.",
+      "We offer free delivery within a 30 km radius, ensuring that you receive your orders promptly and without any hassle."
+    ]
+  },
+  "ourClients": {
+    "title": "Our Clients",
+    "desc": "We take pride in our extensive portfolio of satisfied clients, including notable brands like ITD-IDT-CEM, SRMB Srijan Ltd., and Holiday Inn Express, as well as various public sector organizations and individual clients.\nOur commitment to quality and excellence has earned us the trust and loyalty of our clients."
+  },
+  "ourLocation": {
+    "title": "Our Location",
+    "desc": "We are conveniently located at BG 165/1, Jorakhana, Hanapara, Krishnapur, Kolkata 700 102. Our central location allows us to serve clients across Kolkata and beyond."
+  },
+  "whyChoseUs": {
+    "title": "Why Choose Us?",
+    "list": [
+      {
+        "title": "Experience: ",
+        "desc": "With over 18 years in the industry, we bring a wealth of knowledge and expertise to every project."
+      },
+      {
+        "title": "Quality: ",
+        "desc": "We use the finest materials and employ skilled craftsmen to ensure superior quality in all our products and services."
+      },
+      {
+        "title": "Customization: ",
+        "desc": "We offer fully customized solutions to meet your unique needs and preferences."
+      },
+      {
+        "title": "Customer Satisfaction: ",
+        "desc": "Our focus on customer satisfaction drives us to exceed your expectations at every step."
+      },
+      {
+        "title": "Free Delivery: ",
+        "desc": "Enjoy free delivery within a 30 km radius, adding value to your investment."
+      }
+    ],
+    "desc": "At Interior Exterior Designer, we are dedicated to transforming your spaces with creativity, precision, and a commitment to excellence. Contact us today to discover how we can bring your vision to life."
+  }
+}

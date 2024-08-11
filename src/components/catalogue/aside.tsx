@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { links } from '@/json/links.json'
+import { links } from '@/assets/json/links.json'
 
 const Aside = () => {
   return (
