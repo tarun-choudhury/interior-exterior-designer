@@ -3,7 +3,6 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import { links } from '@/assets/json/links.json'
-import Footer from '@/common/footer'
 import Aside from '@/components/catalogue/aside'
 import ItemCard from '@/components/catalogue/item-card'
 import Search from '@/components/catalogue/search'
@@ -19,9 +18,9 @@ const Page = () => {
     <div className="">
       <div className="flex">
         <Aside />
-        <div className="mx-4 mb-20 mt-10 flex basis-5/6 flex-col gap-4">
+        <div className="mx-4 mb-10 flex basis-5/6 flex-col gap-10 py-20">
           <div className="flex items-end justify-between">
-            <p className="text-xl">
+            <p className="text-3xl">
               {links.map((i) => {
                 if (i.href.split('/').pop() === id) return i.title
               })}{' '}
@@ -50,7 +49,6 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

@@ -2,15 +2,15 @@ import { default as data } from '@/assets/json/about-us.json'
 
 const AboutUs = () => {
   return (
-    <div className="flex w-3/4 flex-col gap-20 py-20 pl-16">
-      //** This is About Us section
+    <div className="mb-10 flex w-3/4 flex-col gap-20 p-20">
+      {/* //* This is About Us section */}
       <div className="flex flex-col gap-4">
         <h1 className="ml-10 text-3xl">{data.aboutUs.title}</h1>
         <h1 className="whitespace-pre-line font-serif font-light">
           {data.aboutUs.desc}
         </h1>
       </div>
-      //** This is Our Expertise section
+      {/* //* This is Our Expertise section */}
       <div className="flex flex-col gap-4">
         <h1 className="ml-10 text-3xl">{data.ourExpertise.title}</h1>
         <h1 className="whitespace-pre-line font-serif font-light">
@@ -27,7 +27,7 @@ const AboutUs = () => {
           ))}
         </ul>
       </div>
-      //** This is Our Process section
+      {/* //* This is Our Process section */}
       <div className="flex flex-col gap-4">
         <h1 className="ml-10 text-3xl">{data.ourProcess.title}</h1>
         <ul className="flex list-disc flex-col font-serif font-light">
@@ -38,21 +38,21 @@ const AboutUs = () => {
           ))}
         </ul>
       </div>
-      //** This is Our Clients section
+      {/* //* This is Our Clients section */}
       <div className="flex flex-col gap-4">
         <h1 className="ml-10 text-3xl">{data.ourClients.title}</h1>
         <h1 className="whitespace-pre-line font-serif font-light">
           {data.ourClients.desc}
         </h1>
       </div>
-      //** This is Our Location section
+      {/* //* This is Our Location section */}
       <div className="flex flex-col gap-4">
         <h1 className="ml-10 text-3xl">{data.ourLocation.title}</h1>
         <h1 className="whitespace-pre-line font-serif font-light">
           {data.ourLocation.desc}
         </h1>
       </div>
-      //** This is Why Chose Us section
+      {/* //* This is Why Chose Us section */}
       <div className="flex flex-col gap-4">
         <h1 className="ml-10 text-3xl">{data.whyChoseUs.title}</h1>
         <ul className="flex list-disc flex-col font-serif font-light">

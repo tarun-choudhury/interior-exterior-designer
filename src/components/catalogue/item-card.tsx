@@ -53,7 +53,7 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
           {showMore ? 'Show Less' : '...Show More'}
         </button>
       )}
-      <Button />
+      <Button text="Place Order" />
     </div>
   )
 }
