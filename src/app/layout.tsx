@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Julius_Sans_One, Merriweather } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
+import Footer from '@/common/footer'
 import Nav from '@/common/nav'
 import './globals.css'
 
@@ -33,6 +34,7 @@ const RootLayout = ({
       >
         <Nav />
         {children}
+        <Footer />
         <Toaster />
       </body>
     </html>
