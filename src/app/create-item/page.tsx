@@ -40,7 +40,8 @@ const AddItem = () => {
   }
 
   return (
-    <div className="bg-60-light flex flex-col gap-20 p-20 pb-32">
+    <div className="bg-60-light flex flex-col gap-10 p-20 pb-32">
+      <h1 className="text-3xl text-primary-light text-center">Add a New Product</h1>
       <form
         className="mx-auto max-w-7xl space-y-4 bg-white p-10 shadow-lg outline outline-1 outline-primary"
         onSubmit={handleSubmit}
