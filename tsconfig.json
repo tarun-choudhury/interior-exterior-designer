@@ -47,6 +47,7 @@
       "@/global/*": ["global/*"],
       "@/hooks/*": ["hooks/*"],
       "@/lib/*": ["lib/*"],
+      "@/helpers/*": ["helpers/*"],
       "@/utils/*": ["utils/*"],
       "@/json/*": ["json/*"],
       "@/providers/*": ["providers/*"],
