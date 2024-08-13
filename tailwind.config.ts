@@ -18,12 +18,17 @@ const config: Config = {
         primary: {
           light: '#717568', // For lighter primary color
           DEFAULT: '#984447', // Normal primary color
-          dark: '#984447' // Used for hover, active, etc.
+          dark: '#FF6663' // Used for hover, active, etc.
         },
         secondary: {
           light: '#717568', // For lighter primary color
           DEFAULT: '#fdfd96', // Normal primary color
-          dark: '#fdfd96' // Used for hover, active, etc.
+          dark: '#e4d17f' // Used for hover, active, etc.
+        },
+        60: {
+          light: '#f8f8f8', // For lighter primary color
+          DEFAULT: '#E1E3E3', // Normal primary color
+          dark: '#0d1b1e' // Used for hover, active, etc.
         },
         custW: '#FFFFFF',
         custS: '#f8f8f8',

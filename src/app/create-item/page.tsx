@@ -1,7 +1,9 @@
 'use client'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useRef, useState } from 'react'
 
+import Button from '@/common/button'
 import useAddItem from '@/hooks/use-add-item'
+import autosizeTextArea from '@/helpers/autosize'
 
 interface Inputs {
   image: File | null
@@ -19,7 +21,9 @@ const AddItem = () => {
     desc: '',
     category: 'kitchen'
   })
+  const textAreaRef = useRef<HTMLTextAreaElement>(null)
   const { loading, addItem } = useAddItem()
+  autosizeTextArea(textAreaRef.current, inputs.desc)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault
@@ -36,15 +40,17 @@ const AddItem = () => {
   }
 
   return (
-    <section>
-      <form className="space-y-4 pb-1" onSubmit={handleSubmit}>
-        <label className="block">
-          <span className="mb-1 block text-xs font-medium text-custG">
-            Product Image
-          </span>
+    <div className="bg-60-light flex flex-col gap-10 p-20 pb-32">
+      <h1 className="text-3xl text-primary-light text-center">Add a New Product</h1>
+      <form
+        className="mx-auto max-w-7xl space-y-4 bg-white p-10 shadow-lg outline outline-1 outline-primary"
+        onSubmit={handleSubmit}
+      >
+        <div className="space-y-1">
+          <label className="text-sm text-primary-light">Product Image</label>
           <input
             required
-            className="form-input rounded-none"
+            className="form-input rounded-none border-primary-light"
             type="file"
             // value={inputs.image}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -52,14 +58,12 @@ const AddItem = () => {
               setInputs({ ...inputs, image: e.target.files[0] })
             }
           />
-        </label>
-        <label className="block">
-          <span className="mb-1 block text-xs font-medium text-custG">
-            Product Title
-          </span>
+        </div>
+        <div className="space-y-1">
+          <label className="text-sm text-primary-light">Product Title</label>
           <input
             required
-            className="form-input rounded-none"
+            className="form-input rounded-none border-primary-light"
             placeholder="Enter title here"
             type="text"
             value={inputs.title}
@@ -67,14 +71,12 @@ const AddItem = () => {
               setInputs({ ...inputs, title: e.target.value })
             }
           />
-        </label>
-        <label className="block">
-          <span className="mb-1 block text-xs font-medium text-custG">
-            Product Price
-          </span>
+        </div>
+        <div className="space-y-1">
+          <label className="text-sm text-primary-light">Product Price</label>
           <input
             required
-            className="form-input rounded-none"
+            className="form-input rounded-none border-primary-light"
             placeholder="Enter price in Interior"
             type="number"
             value={inputs.price}
@@ -82,27 +84,28 @@ const AddItem = () => {
               setInputs({ ...inputs, price: Number(e.target.value) })
             }
           />
-        </label>
-        <label className="block">
-          <span className="mb-1 block text-xs font-medium text-custG">
+        </div>
+        <div className="space-y-1">
+          <label className="text-sm text-primary-light">
             Product Description
-          </span>
+          </label>
           <textarea
             required
-            className="form-input rounded-none"
+            ref={textAreaRef}
+            className="form-input resize-none rounded-none border-primary-light"
             placeholder="Enter product description here"
             value={inputs.desc}
+            rows={1}
+            style={{ scrollbarGutter: 'stable' }}
             onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
               setInputs({ ...inputs, desc: e.target.value })
             }
           />
-        </label>
-        <label className="block">
-          <span className="mb-1 block text-xs font-medium text-custG">
-            Product Category
-          </span>
+        </div>
+        <div className="space-y-1">
+          <label className="text-sm text-primary-light">Product Category</label>
           <select
-            className="form-select rounded-none"
+            className="form-input rounded-none border-primary-light"
             id="color"
             value={inputs.category}
             onChange={(e: ChangeEvent<HTMLSelectElement>) =>
@@ -122,17 +125,17 @@ const AddItem = () => {
             <option value="louver">Louver</option>
             <option value="renovation">Renovation</option>
           </select>
-        </label>
-        <div className="flex items-center justify-end">
-          <button
-            className="btn btn-outline-primary rounded-none"
+        </div>
+        <div className="flex justify-center pb-1 pt-6">
+          <Button
+            text="Add Product"
+            width={12}
             type="submit"
-          >
-            {loading ? 'Loading...' : 'Add Product'}
-          </button>
+            loading={loading}
+          />
         </div>
       </form>
-    </section>
+    </div>
   )
 }
 

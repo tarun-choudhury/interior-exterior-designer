@@ -25,7 +25,7 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
   return (
     <div
       key={key}
-      className="flex w-full flex-col gap-2 p-4 outline outline-1 outline-primary transition-all hover:-translate-y-1 hover:shadow-lg"
+      className={`flex w-full flex-col gap-2 ${!showMore && 'h-[27rem]'} bg-white p-4 outline outline-1 outline-primary transition-all hover:-translate-y-1 hover:shadow-lg`}
     >
       <div className="p-1">
         <div className="group relative">
@@ -35,8 +35,8 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
           <div className="absolute -left-1 right-1 top-0.5 w-full rounded-none border border-custR bg-transparent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-1 xl:h-40"></div>
         </div>
       </div>
-      <p className="text-xl">Rs {price}</p>
-      <p className="text-xl">{title}</p>
+      <h1 className="text-xl">Rs {price}</h1>
+      <h1 className="text-xl">{title}</h1>
       <p
         ref={descRef}
         className={`whitespace-pre-line text-xs text-primary-light ${!showMore && 'max-h-16 overflow-hidden'} `}
@@ -53,7 +53,9 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
           {showMore ? 'Show Less' : '...Show More'}
         </button>
       )}
-      <Button text="Place Order" />
+      <div className="mt-auto">
+        <Button loading={false} text="Place Order" type="button" width={0} />
+      </div>
     </div>
   )
 }

@@ -7,7 +7,7 @@ interface OptionProps {
 
 const Option = ({ categoryName }: OptionProps) => {
   return (
-    <div className="group relative overflow-hidden shadow-md">
+    <div className="group relative overflow-hidden">
       <Link href={`/catalogue/${categoryName}`}>
         <Image
           alt={categoryName}
