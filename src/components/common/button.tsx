@@ -5,12 +5,7 @@ interface ButtonProps {
   loading: boolean
 }
 
-const Button = ({
-  text,
-  width = 0,
-  type = 'button',
-  loading = false
-}: ButtonProps) => {
+const Button = ({ text, width, type, loading }: ButtonProps) => {
   return (
     <div className="p-1">
       <button
@@ -24,9 +19,9 @@ const Button = ({
           {loading ? (
             <span className="">
               <span
-                className="spinner h-4 w-4"
-                role="status"
                 aria-hidden="true"
+                className="spinner size-4"
+                role="status"
               ></span>
               <span className="pl-4">Loading</span>
             </span>
