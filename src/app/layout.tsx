@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Julius_Sans_One, Merriweather } from 'next/font/google'
+import { Julius_Sans_One, Merriweather, Italianno } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
 import Footer from '@/common/footer'
@@ -16,6 +16,11 @@ const merriweather = Merriweather({
   subsets: ['latin'],
   variable: '--merriweather'
 })
+const italianno = Italianno({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--italianno'
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -30,7 +35,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${juliusSansOne.variable} ${merriweather.variable} font-sans text-60-dark`}
+        className={`${juliusSansOne.variable} ${merriweather.variable} ${italianno.variable} font-sans text-60-dark`}
       >
         <Nav />
         {children}

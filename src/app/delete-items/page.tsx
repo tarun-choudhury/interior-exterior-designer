@@ -47,7 +47,7 @@ const DelItem = () => {
         {items.map((item: any) => (
           <li
             key={item._id}
-            className={`cursor-pointer p-4 outline outline-1 outline-primary ${selectedIds.includes(item._id as never) && 'bg-secondary'}`}
+            className={`cursor-pointer p-4 outline outline-1 outline-primary transition-all hover:-translate-y-1 hover:shadow-lg ${selectedIds.includes(item._id as never) && 'bg-secondary'}`}
             onClick={() =>
               handleSelect(item._id as never, item.public_id as never)
             }
