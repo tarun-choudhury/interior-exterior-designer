@@ -7,7 +7,8 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--julius-sans-one)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         serif: ['var(--merriweather)', 'Georgia', 'ui-serif', 'serif'],
-        mono: ['ui-monospace', 'monospace']
+        mono: ['ui-monospace', 'monospace'],
+        italic: ['var(--italianno)', 'ui-serif', 'serif']
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

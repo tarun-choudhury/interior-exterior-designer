@@ -16,8 +16,20 @@ const ContactUs = () => {
           </div>
         </div>
         <div className="flex justify-center gap-10 px-6 md:justify-start">
-          <Button text="Email" width={12} type="button" loading={false} />
-          <Button text="WhatsApp" width={12} type="button" loading={false} />
+          <Button
+            loading={false}
+            onclick={() => {}}
+            text="Email"
+            type="button"
+            width={12}
+          />
+          <Button
+            loading={false}
+            onclick={() => {}}
+            text="WhatsApp"
+            type="button"
+            width={12}
+          />
         </div>
       </div>
 

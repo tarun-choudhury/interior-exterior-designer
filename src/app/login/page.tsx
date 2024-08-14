@@ -49,7 +49,7 @@ const Login = () => {
           />
         </div>
         <div className="flex justify-center pb-1 pt-6">
-          <Button text="Login" width={12} type="submit" loading={loading} />
+          <Button loading={loading} text="Login" type="submit" width={12} />
         </div>
       </form>
     </div>

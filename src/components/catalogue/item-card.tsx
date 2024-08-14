@@ -54,7 +54,13 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
         </button>
       )}
       <div className="mt-auto">
-        <Button loading={false} text="Place Order" type="button" width={0} />
+        <Button
+          loading={false}
+          onclick={() => {}}
+          text="Place Order"
+          type="button"
+          width={0}
+        />
       </div>
     </div>
   )
