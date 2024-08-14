@@ -131,6 +131,7 @@ const AddItem = () => {
         <div className="flex justify-center pb-1 pt-6">
           <Button
             loading={loading}
+            onclick={() => {}}
             text="Add Product"
             type="submit"
             width={12}
