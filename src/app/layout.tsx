@@ -30,7 +30,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${juliusSansOne.variable} ${merriweather.variable} text-60-dark font-sans`}
+        className={`${juliusSansOne.variable} ${merriweather.variable} font-sans text-60-dark`}
       >
         <Nav />
         {children}

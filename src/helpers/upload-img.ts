@@ -8,7 +8,7 @@ interface Input {
 const uploadImg = async ({ file, folder }: Input) => {
   const buffer = await file.arrayBuffer()
   const bytes = Buffer.from(buffer)
-
+  // TODO: remove async await
   const response = new Promise(async (resolve, reject) => {
     await cloudinary.uploader
       .upload_stream(

@@ -2,8 +2,8 @@
 import { ChangeEvent, FormEvent, useRef, useState } from 'react'
 
 import Button from '@/common/button'
+import useAutosizeTextArea from '@/helpers/autosize'
 import useAddItem from '@/hooks/use-add-item'
-import autosizeTextArea from '@/helpers/autosize'
 
 interface Inputs {
   image: File | null
@@ -23,7 +23,7 @@ const AddItem = () => {
   })
   const textAreaRef = useRef<HTMLTextAreaElement>(null)
   const { loading, addItem } = useAddItem()
-  autosizeTextArea(textAreaRef.current, inputs.desc)
+  useAutosizeTextArea(textAreaRef.current, inputs.desc)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault
@@ -40,8 +40,10 @@ const AddItem = () => {
   }
 
   return (
-    <div className="bg-60-light flex flex-col gap-10 p-20 pb-32">
-      <h1 className="text-3xl text-primary-light text-center">Add a New Product</h1>
+    <div className="flex flex-col gap-10 bg-60-light p-20 pb-32">
+      <h1 className="text-center text-3xl text-primary-light">
+        Add a New Product
+      </h1>
       <form
         className="mx-auto max-w-7xl space-y-4 bg-white p-10 shadow-lg outline outline-1 outline-primary"
         onSubmit={handleSubmit}
@@ -90,13 +92,13 @@ const AddItem = () => {
             Product Description
           </label>
           <textarea
-            required
             ref={textAreaRef}
+            required
             className="form-input resize-none rounded-none border-primary-light"
             placeholder="Enter product description here"
-            value={inputs.desc}
             rows={1}
             style={{ scrollbarGutter: 'stable' }}
+            value={inputs.desc}
             onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
               setInputs({ ...inputs, desc: e.target.value })
             }
@@ -128,10 +130,10 @@ const AddItem = () => {
         </div>
         <div className="flex justify-center pb-1 pt-6">
           <Button
-            text="Add Product"
-            width={12}
-            type="submit"
             loading={loading}
+            text="Add Product"
+            type="submit"
+            width={12}
           />
         </div>
       </form>
