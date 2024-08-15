@@ -1,4 +1,4 @@
-const About = () => {
+const Catchphrase = () => {
   return (
     <div className="flex h-screen w-full flex-col gap-4 p-20 pr-0 pt-40">
       <h1 className="font-italic text-4xl">Elevate Your Living Experience</h1>
@@ -13,4 +13,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Catchphrase
