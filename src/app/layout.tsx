@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Julius_Sans_One, Merriweather, Italianno } from 'next/font/google'
+import { Italianno, Julius_Sans_One, Merriweather } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
 import Footer from '@/common/footer'
@@ -35,11 +35,13 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${juliusSansOne.variable} ${merriweather.variable} ${italianno.variable} font-sans text-60-dark`}
+        className={`${juliusSansOne.variable} ${merriweather.variable} ${italianno.variable} bg-60-light font-sans text-60-dark`}
       >
         <Nav />
-        {children}
-        <Footer />
+        <div className="pt-16">
+          {children}
+          <Footer />
+        </div>
         <Toaster />
       </body>
     </html>
