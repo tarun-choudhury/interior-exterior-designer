@@ -26,7 +26,7 @@ const Login = () => {
           <label className="text-sm text-primary-light">Your Email</label>
           <input
             required
-            className="form-input rounded-none border-primary-light"
+            className="form-input rounded-none border-primary-light font-serif placeholder:font-sans"
             placeholder="Enter title here"
             type="email"
             value={email}
@@ -49,7 +49,13 @@ const Login = () => {
           />
         </div>
         <div className="flex justify-center pb-1 pt-6">
-          <Button loading={loading} text="Login" type="submit" width={12} />
+          <Button
+            loading={loading}
+            onclick={() => {}}
+            text="Login"
+            type="submit"
+            width={12}
+          />
         </div>
       </form>
     </div>

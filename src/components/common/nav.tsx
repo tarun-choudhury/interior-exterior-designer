@@ -1,51 +1,87 @@
 'use client'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 import useLogout from '@/hooks/use-logout'
 import clientToken from '@/utils/get-client-token'
 
+import Button from './button'
+
 const Nav = () => {
   const { loading, logout } = useLogout()
-  const token = clientToken()
-  console.log('token', token)
+  const [token, setToken] = useState<string | null>(null)
+
+  useEffect(() => {
+    // Set the initial token value
+    setToken(clientToken())
+
+    // Listen for changes in the token
+    const handleTokenChange = () => {
+      setToken(clientToken())
+    }
+
+    const interval = setInterval(handleTokenChange, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   const handleSubmit = async () => {
     console.log('logout/ui')
     await logout()
   }
 
   return (
-    <div className="flex items-center justify-between bg-gray-800 px-6 py-4 text-white">
-      <Link className="text-lg font-semibold" href="/">
+    <div className="fixed z-10 flex h-16 w-full items-center justify-between bg-60-light px-10 py-4 text-60-dark">
+      <Link
+        className="text-3xl text-primary transition-all duration-300 hover:tracking-widest"
+        href="/"
+      >
         Interior Exterior Designer
       </Link>
       <div className="">
         {!token && (
-          <div className="flex gap-4">
-            <Link className="hover:text-gray-300" href="/catalogue">
+          <div className="flex items-center gap-10">
+            <Link
+              className="text-lg transition-all hover:text-primary"
+              href="/catalogue"
+            >
               Catalogue
             </Link>
-            <Link className="hover:text-gray-300" href="/about">
+            <Link
+              className="text-lg transition-all hover:text-primary"
+              href="/know-about-us"
+            >
               About Us
             </Link>
-            <Link className="hover:text-gray-300" href="/contact">
+            <Link
+              className="text-lg transition-all hover:text-primary"
+              href="/contact-us"
+            >
               Contact Us
             </Link>
           </div>
         )}
         {token && (
-          <div className="flex gap-4">
-            <Link className="hover:text-gray-300" href="/create-item">
+          <div className="flex items-center gap-10">
+            <Link
+              className="text-lg transition-all hover:text-primary"
+              href="/create-items"
+            >
               Add Item
             </Link>
-            <Link className="hover:text-gray-300" href="/delete-item">
+            <Link
+              className="text-lg transition-all hover:text-primary"
+              href="/delete-items"
+            >
               Delete Item
             </Link>
-            <button
-              className="btn btn-outline-primary rounded-none"
-              onClick={handleSubmit}
-            >
-              {loading ? 'Loading...' : 'Logout'}
-            </button>
+            <Button
+              loading={loading}
+              onclick={handleSubmit}
+              text="Logout"
+              type="button"
+              width={0}
+            />
           </div>
         )}
       </div>

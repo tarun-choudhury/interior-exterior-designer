@@ -86,7 +86,7 @@ const EmblaCarousel = (props: PropType) => {
       .on('reInit', tweenParallax)
       .on('scroll', tweenParallax)
       .on('slideFocus', tweenParallax)
-  }, [emblaApi, tweenParallax])
+  }, [emblaApi, tweenParallax, setTweenNodes, setTweenFactor])
 
   return (
     <div className="">
@@ -95,8 +95,7 @@ const EmblaCarousel = (props: PropType) => {
           <div className="embla__container">
             {slides.map((index) => (
               <div key={index} className="embla__slide">
-                {/* <div className="embla__slide__number bg-red-500">{index + 1}</div> */}
-                <div className="embla__parallax">
+                <div className="embla__parallax shadow">
                   <div className="embla__parallax__layer">
                     <Image
                       alt="Your alt text"
