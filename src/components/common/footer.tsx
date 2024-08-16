@@ -1,84 +1,87 @@
 import Link from 'next/link'
 
-import { links } from '@/assets/json/links.json'
+import jsonData from '@/assets/json/links.json'
 import Dot from '@/assets/svg/dot'
 
 const Footer = () => {
+  const links = jsonData.links
   return (
-    <footer className="mb-auto w-full bg-custT text-custB">
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-6">
-        <div className="col-span-2 my-20 flex flex-col gap-2 px-10 md:col-span-2">
+    <footer className="mt-auto w-full pt-10 xl:p-0 bg-60">
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="col-span-1 xl:my-10 flex flex-col gap-2 px-4 sm:px-10 sm:col-span-2 lg:col-span-3 xl:col-span-2">
           <Link
-            className="mb-3 w-fit text-3xl uppercase tracking-wider text-primary transition md:mb-2"
+            className="w-fit text-3xl tracking-wider text-primary transition-all md:text-3xl lg:mb-2"
             href=""
           >
             Interior Exterior Designer
           </Link>
-          <div className="flex justify-evenly">
+          <div className="flex px-1 items-center text-sm">
             <Link
-              className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
+              className="w-fit tracking-wider transition-all hover:text-primary"
               href=""
             >
               Instagram
             </Link>
             <Dot />
             <Link
-              className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
+              className="w-fit tracking-wider transition-all hover:text-primary"
               href=""
             >
               Facebook
             </Link>
             <Dot />
             <Link
-              className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
+              className="w-fit tracking-wider transition-all hover:text-primary"
               href=""
             >
               IndiaMart
             </Link>
           </div>
-          <div className="flex flex-col gap-1 text-xs">
+          <div className="flex px-1 font-mono font-light flex-col gap-1 text-xs lg:text-sm">
             <p>tarun.choudhury@interior-designers.in</p>
             <p>+91 90079 92282</p>
             <p>+91 97481 13277</p>
           </div>
         </div>
-        <nav className="my-20 flex flex-col">
-          {links.map((i) => {
-            return (
-              i.index < 6 && (
-                <Link
-                  key={i.index}
-                  className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-                  href={i.href}
-                >
-                  {i.title}
-                </Link>
+        <div className="col-span-1 py-4 sm:pl-10 sm:gap-4 justify-items-center grid grid-cols-2 text-xs md:text-sm lg:col-span-3 xl:col-span-2 lg:text-base lg:justify-items-start xl:p-0 xl:my-10">
+          <nav className="flex flex-col">
+            {links.map((i) => {
+              return (
+                i.index < 6 && (
+                  <Link
+                    key={i.index}
+                    className="mb-3 w-fit tracking-wider transition-all hover:text-primary md:mb-2"
+                    href={i.href}
+                  >
+                    {i.title}
+                  </Link>
+                )
               )
-            )
-          })}
-        </nav>
+            })}
+          </nav>
 
-        <nav className="my-20 flex flex-col">
-          {links.map((i) => {
-            return (
-              i.index >= 6 && (
-                <Link
-                  key={i.index}
-                  className="mb-3 w-fit uppercase tracking-wider transition hover:text-primary md:mb-2"
-                  href={i.href}
-                >
-                  {i.title}
-                </Link>
+          <nav className="flex flex-col">
+            {links.map((i) => {
+              return (
+                i.index >= 6 && (
+                  <Link
+                    key={i.index}
+                    className="mb-3 w-fit tracking-wider transition-all hover:text-primary md:mb-2"
+                    href={i.href}
+                  >
+                    {i.title}
+                  </Link>
+                )
               )
-            )
-          })}
-        </nav>
-        <div className="col-span-2">
+            })}
+          </nav>
+        </div>
+        <div className="col-span-1 lg:col-span-6 h-80 sm:size-full lg:h-60 lg:w-full xl:col-span-2 xl:size-full">
           <iframe
-            allowfullscreen=""
+            // allowfullscreen=""
             className="size-full"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            // referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14733.687969403227!2d88.41617166996004!3d22.600711685903697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275ff5d7c5509%3A0xad7d469c817a5b3f!2sInteriorexteriordesigner!5e0!3m2!1sen!2sin!4v1723050687541!5m2!1sen!2sin"
           ></iframe>
         </div>
