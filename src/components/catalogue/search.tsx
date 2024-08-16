@@ -1,4 +1,4 @@
-import SearchIcon from '@/assets/svg/searchIcon'
+import SearchIcon from '@/assets/svg/search-icon'
 
 const Search = ({ setSearch }: any) => {
   return (

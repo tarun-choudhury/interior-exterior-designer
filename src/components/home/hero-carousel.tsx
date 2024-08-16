@@ -89,7 +89,7 @@ const EmblaCarousel = (props: PropType) => {
   }, [emblaApi, tweenParallax, setTweenNodes, setTweenFactor])
 
   return (
-    <div className="">
+    <div className="hidden lg:block">
       <section className="embla">
         <div ref={emblaRef} className="embla__viewport">
           <div className="embla__container">
