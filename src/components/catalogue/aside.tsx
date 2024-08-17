@@ -5,8 +5,8 @@ import { links } from '@/assets/json/links.json'
 const Aside = () => {
   return (
     <div
-      className="sticky top-12 flex w-1/6 flex-col justify-center gap-2 p-4"
-      style={{ height: 'calc(100vh - 3rem)' }}
+      className="sticky top-16 hidden w-1/5 flex-col justify-center gap-2 p-4 lg:flex xl:w-1/6"
+      style={{ maxHeight: 'calc(100vh - 4rem)' }}
     >
       {links.map((i) => {
         return (

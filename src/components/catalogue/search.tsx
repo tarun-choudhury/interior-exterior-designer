@@ -2,7 +2,7 @@ import SearchIcon from '@/assets/svg/search-icon'
 
 const Search = ({ setSearch }: any) => {
   return (
-    <div className="form-icon -ml-3 hidden w-96 bg-red-500 shadow-md md:block">
+    <div className="form-icon shadow-md md:w-72 xl:-ml-3 xl:w-96">
       <SearchIcon />
       <input
         className="form-input rounded-none border-primary placeholder:text-primary-light"
