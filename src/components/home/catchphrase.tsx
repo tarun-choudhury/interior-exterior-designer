@@ -1,6 +1,7 @@
 const Catchphrase = () => {
   return (
-    <div className="flex w-full flex-col gap-4 p-4 py-36 pr-0 sm:px-10 sm:pt-24 md:px-0 lg:h-screen lg:p-0 lg:pl-10 lg:pt-40 xl:pt-40">
+    // <div className="flex w-full flex-col gap-4 p-4 py-36 pr-0 sm:px-10 sm:pt-24 md:px-0 md:pt-60 bg-red-500 lg:pb-20 h-[calc(100vh-4rem)] xl:h-[50rem] lg:pr-0 lg:pl-10 lg:pt-10 xl:pt-40">
+    <div className="flex w-full flex-col gap-10 lg:gap-4 p-4 pt-20 pb-40 pr-0 lg:pb-10 justify-center h-[calc(100vh-4rem)] lg:h-[40rem] xl:h-[calc(100vh-4rem)]">
       <h1 className="font-italic text-xl sm:text-2xl md:text-3xl xl:text-4xl">
         Elevate Your Living Experience
       </h1>

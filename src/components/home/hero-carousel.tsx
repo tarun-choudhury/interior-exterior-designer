@@ -99,7 +99,7 @@ const EmblaCarousel = (props: PropType) => {
                   <div className="embla__parallax__layer">
                     <Image
                       alt="Your alt text"
-                      className="embla__slide__img embla__parallax__img"
+                      className="embla__slide__img embla__parallax__img lg:h-[44rem] xl:h-[calc(100vh-4rem)]"
                       height={100000}
                       quality={100}
                       src={`https://picsum.photos/1000/1000?v=${index}`}

@@ -33,9 +33,9 @@ const Nav = () => {
   }
 
   return (
-    <nav className="fixed shadow-sm  z-10 flex h-16 w-full items-center justify-between bg-60-light px-4">
+    <nav className="fixed z-10 flex h-16 w-full items-center justify-between bg-60-light px-4 shadow-sm">
       <Link
-        className="text-xl text-primary transition-all duration-300 md:hover:tracking-widest md:text-3xl"
+        className="text-xl text-primary transition-all duration-300 md:text-3xl md:hover:tracking-widest"
         href="/"
       >
         Interior Exterior Designer
