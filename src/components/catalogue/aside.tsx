@@ -1,8 +1,9 @@
 import Link from 'next/link'
 
-import { links } from '@/assets/json/links.json'
+import jsonData from '@/assets/json/links.json'
 
 const Aside = () => {
+  const links = jsonData.links
   return (
     <div
       className="sticky top-16 hidden w-1/5 flex-col justify-center gap-2 p-4 lg:flex xl:w-1/6"
