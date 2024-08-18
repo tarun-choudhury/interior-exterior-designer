@@ -8,12 +8,12 @@ import EmblaCarousel from '@/components/home/hero-carousel'
 
 const Home = () => {
   const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true }
-  const SLIDE_COUNT = 10
+  const SLIDE_COUNT = 12
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
   return (
     <main className="mb-10 min-h-screen">
       <EmblaCarousel options={OPTIONS} slides={SLIDES} />
-      <div className="flex flex-col items-center justify-between gap-10 p-4 sm:gap-20 sm:p-10 md:p-20">
+      <div className="flex flex-col items-center justify-between gap-10 p-4 pt-0 sm:gap-20 sm:p-10 md:p-20 md:pt-0">
         <Catchphrase />
         <CustomerBrands />
         <CallToAction />

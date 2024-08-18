@@ -2,12 +2,11 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 const useGetItemsByCat = (id: any) => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [items, setItems] = useState([])
 
   useEffect(() => {
     const getItems = async () => {
-      setLoading(true)
       try {
         const response = await axios.get(`/api/items/get-items/${id}`)
         if (response.data.error) throw new Error(response.data.error)

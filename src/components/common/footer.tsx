@@ -6,51 +6,53 @@ import Dot from '@/assets/svg/dot'
 const Footer = () => {
   const links = jsonData.links
   return (
-    <footer className="mt-auto w-full pt-10 xl:p-0 bg-60">
+    <footer className="bottom-0 mt-auto w-full bg-60 pt-10 xl:p-0">
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
-        <div className="col-span-1 xl:my-10 flex flex-col gap-2 px-4 sm:px-10 sm:col-span-2 lg:col-span-3 xl:col-span-2">
+        <div className="col-span-1 flex flex-col gap-2 px-4 sm:col-span-2 sm:px-10 lg:col-span-3 xl:col-span-2 xl:my-20">
           <Link
-            className="w-fit text-3xl tracking-wider text-primary transition-all md:text-3xl lg:mb-2"
+            className="w-fit text-3xl tracking-wider text-30 transition-all md:text-3xl lg:mb-2"
             href=""
           >
             Interior Exterior Designer
           </Link>
-          <div className="flex px-1 items-center text-sm">
+          <div className="flex items-center px-1 text-sm">
             <Link
-              className="w-fit tracking-wider transition-all hover:text-primary"
-              href=""
-            >
-              Instagram
-            </Link>
-            <Dot />
-            <Link
-              className="w-fit tracking-wider transition-all hover:text-primary"
+              className="w-fit tracking-wider transition-all hover:text-30"
               href=""
             >
               Facebook
             </Link>
             <Dot />
             <Link
-              className="w-fit tracking-wider transition-all hover:text-primary"
+              className="w-fit tracking-wider transition-all hover:text-30"
               href=""
             >
               IndiaMart
             </Link>
+            <Dot />
+            <Link
+              className="w-fit tracking-wider transition-all hover:text-30"
+              href="https://wa.me/9007992282"
+            >
+              WhatsApp
+            </Link>
           </div>
-          <div className="flex px-1 font-mono font-light flex-col gap-1 text-xs lg:text-sm">
-            <p>tarun.choudhury@interior-designers.in</p>
-            <p>+91 90079 92282</p>
-            <p>+91 97481 13277</p>
+          <div className="flex flex-col gap-1 px-1 font-mono text-xs font-light">
+            <Link href="mailto:tarun.choudhury@interior-designers.in">
+              tarun.choudhury@interior-designers.in
+            </Link>
+            <Link href="tel:9007992282">+91 90079 92282</Link>
+            <Link href="tel:9748113277">+91 97481 13277</Link>
           </div>
         </div>
-        <div className="col-span-1 py-4 sm:pl-10 sm:gap-4 justify-items-center grid grid-cols-2 text-xs md:text-sm lg:col-span-3 xl:col-span-2 lg:text-base lg:justify-items-start xl:p-0 xl:my-10">
+        <div className="col-span-1 grid grid-cols-2 justify-items-center py-4 text-xs sm:gap-4 sm:pl-10 md:text-sm lg:col-span-3 lg:justify-items-start lg:text-base xl:col-span-2 xl:my-20 xl:p-0">
           <nav className="flex flex-col">
             {links.map((i) => {
               return (
                 i.index < 6 && (
                   <Link
                     key={i.index}
-                    className="mb-3 w-fit tracking-wider transition-all hover:text-primary md:mb-2"
+                    className="mb-3 w-fit tracking-wider transition-all hover:text-30 md:mb-2"
                     href={i.href}
                   >
                     {i.title}
@@ -66,7 +68,7 @@ const Footer = () => {
                 i.index >= 6 && (
                   <Link
                     key={i.index}
-                    className="mb-3 w-fit tracking-wider transition-all hover:text-primary md:mb-2"
+                    className="mb-3 w-fit tracking-wider transition-all hover:text-30 md:mb-2"
                     href={i.href}
                   >
                     {i.title}
@@ -76,7 +78,7 @@ const Footer = () => {
             })}
           </nav>
         </div>
-        <div className="col-span-1 lg:col-span-6 h-80 sm:size-full lg:h-60 lg:w-full xl:col-span-2 xl:size-full">
+        <div className="col-span-1 h-80 sm:size-full lg:col-span-6 lg:h-60 lg:w-full xl:col-span-2 xl:size-full">
           <iframe
             // allowfullscreen=""
             className="size-full"

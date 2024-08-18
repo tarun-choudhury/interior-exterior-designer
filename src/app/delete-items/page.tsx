@@ -40,14 +40,14 @@ const DelItem = () => {
 
   return (
     <div className="flex flex-col gap-10 bg-60-light p-20 pb-32">
-      <h1 className="ml-10 w-fit text-center text-3xl text-primary-light">
+      <h1 className="ml-10 w-fit text-center text-3xl text-30-light">
         Delete Multiple Items
       </h1>
       <ul className="flex flex-wrap gap-10">
         {items.map((item: any) => (
           <li
             key={item._id}
-            className={`cursor-pointer p-4 outline outline-1 outline-primary transition-all hover:-translate-y-1 hover:shadow-lg ${selectedIds.includes(item._id as never) && 'bg-secondary'}`}
+            className={`cursor-pointer p-4 outline outline-1 outline-30 transition-all hover:-translate-y-1 hover:shadow-lg ${selectedIds.includes(item._id as never) && 'bg-10'}`}
             onClick={() =>
               handleSelect(item._id as never, item.public_id as never)
             }
@@ -59,13 +59,14 @@ const DelItem = () => {
             <div className="space-y-1">
               <h1>{item.title}</h1>
               <h1>{item.price}</h1>
-              <h1 className="text-sm text-primary">{item.category}</h1>
+              <h1 className="text-sm text-30">{item.category}</h1>
             </div>
             <div className="relative size-60">
               <Image
                 fill
                 alt={item.title}
                 className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 33vw, (max-width: 1536px) 25vw, 20vw"
                 src={item.image_url}
               />
             </div>
@@ -73,7 +74,7 @@ const DelItem = () => {
         ))}
       </ul>
       {selectedIds.length != 0 && (
-        <div className="fixed right-0 top-0 flex w-full items-center justify-end gap-10 bg-60-light px-10 py-2">
+        <div className="fixed right-0 top-0 z-10 flex h-16 w-full items-center justify-end gap-10 bg-60-light px-10 shadow-sm">
           <Button
             loading={delLoading}
             onclick={handleDelete}
