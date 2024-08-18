@@ -74,7 +74,7 @@ const DelItem = () => {
         ))}
       </ul>
       {selectedIds.length != 0 && (
-        <div className="fixed right-0 top-0 flex w-full items-center justify-end gap-10 bg-60-light px-10 py-2">
+        <div className="fixed right-0 top-0 z-10 flex h-16 w-full items-center justify-end gap-10 bg-60-light px-10 shadow-sm">
           <Button
             loading={delLoading}
             onclick={handleDelete}

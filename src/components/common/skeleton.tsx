@@ -1,5 +1,3 @@
-import React from 'react'
-
 const RouteLoadingSkeleton = () => {
   return (
     <div className="flex h-96 min-h-80 w-full flex-col items-center justify-center gap-4 p-10 text-center md:h-[calc(100vh-30rem)] lg:h-[calc(100vh-38rem)] xl:h-[calc(100vh-26rem)] xl:gap-6">
@@ -7,7 +5,7 @@ const RouteLoadingSkeleton = () => {
         Loading.....
       </h1>
       <progress
-        className="text-30 progress md:w-96 xl:w-96"
+        className="progress text-30 md:w-96 xl:w-96"
         max="100"
       ></progress>
     </div>
@@ -52,4 +50,4 @@ const DeleteCardSkeleton = () => {
   return <ul className="flex flex-wrap gap-10">{list}</ul>
 }
 
-export { RouteLoadingSkeleton, ItemCardSkeleton, DeleteCardSkeleton }
+export { DeleteCardSkeleton, ItemCardSkeleton, RouteLoadingSkeleton }

@@ -16,7 +16,7 @@ const Aside = () => {
         return (
           <Link
             key={i.index}
-            className="hover:text-30 w-fit uppercase transition-all duration-300 hover:tracking-widest"
+            className="w-fit transition-all duration-300 hover:tracking-widest hover:text-30"
             href={i.href}
           >
             {i.title}

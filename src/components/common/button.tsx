@@ -15,9 +15,9 @@ const Button = ({ text, width, type, loading, onclick }: ButtonProps) => {
         type={type}
         onClick={onclick}
       >
-        <div className="bg-10 btn btn-lg absolute -right-1 -top-0.5 left-1 size-full rounded-none text-transparent shadow transition-all group-hover:-translate-x-1 group-hover:translate-y-0.5"></div>
-        <div className="border-30 btn btn-lg absolute -left-1 right-1 top-0.5 size-full rounded-none border bg-transparent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-1"></div>
-        <div className="text-30 btn btn-lg w-full rounded-none bg-transparent">
+        <div className="btn btn-lg absolute -right-1 -top-0.5 left-1 size-full rounded-none bg-10 text-transparent shadow transition-all group-hover:-translate-x-1 group-hover:translate-y-0.5"></div>
+        <div className="btn btn-lg absolute -left-1 right-1 top-0.5 size-full rounded-none border border-30 bg-transparent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-1"></div>
+        <div className="btn btn-lg w-full rounded-none bg-transparent text-30">
           {loading ? (
             <span className="">
               <span

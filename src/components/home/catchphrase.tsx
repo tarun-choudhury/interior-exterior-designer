@@ -5,7 +5,7 @@ const Catchphrase = () => {
       <h1 className="font-italic text-xl sm:text-2xl md:text-3xl xl:text-4xl">
         Elevate Your Living Experience
       </h1>
-      <h1 className="text-30 mb-4 ml-10 text-5xl md:mb-10 md:ml-12 md:text-6xl lg:ml-20 lg:text-7xl xl:ml-24 xl:text-8xl">
+      <h1 className="mb-4 ml-10 text-5xl text-30 md:mb-10 md:ml-12 md:text-6xl lg:ml-20 lg:text-7xl xl:ml-24 xl:text-8xl">
         Interior Exterior Designer
       </h1>
       <div className="ml-24 lg:ml-40 xl:ml-48">

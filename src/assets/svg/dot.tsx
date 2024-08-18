@@ -1,7 +1,7 @@
 const Dot = () => {
   return (
     <svg
-      className="lucide lucide-dot mx-2"
+      className="mx-2"
       fill="none"
       height="10"
       stroke="currentColor"

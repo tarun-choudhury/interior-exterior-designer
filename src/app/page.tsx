@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <main className="mb-10 min-h-screen">
       <EmblaCarousel options={OPTIONS} slides={SLIDES} />
-      <div className="flex flex-col items-center justify-between gap-10 p-4 sm:gap-20 sm:p-10 md:p-20 pt-0 md:pt-0">
+      <div className="flex flex-col items-center justify-between gap-10 p-4 pt-0 sm:gap-20 sm:p-10 md:p-20 md:pt-0">
         <Catchphrase />
         <CustomerBrands />
         <CallToAction />

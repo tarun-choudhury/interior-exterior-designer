@@ -10,34 +10,34 @@ const Footer = () => {
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
         <div className="col-span-1 flex flex-col gap-2 px-4 sm:col-span-2 sm:px-10 lg:col-span-3 xl:col-span-2 xl:my-20">
           <Link
-            className="text-30 w-fit text-3xl tracking-wider transition-all md:text-3xl lg:mb-2"
+            className="w-fit text-3xl tracking-wider text-30 transition-all md:text-3xl lg:mb-2"
             href=""
           >
             Interior Exterior Designer
           </Link>
           <div className="flex items-center px-1 text-sm">
             <Link
-              className="hover:text-30 w-fit tracking-wider transition-all"
+              className="w-fit tracking-wider transition-all hover:text-30"
               href=""
             >
               Facebook
             </Link>
             <Dot />
             <Link
-              className="hover:text-30 w-fit tracking-wider transition-all"
+              className="w-fit tracking-wider transition-all hover:text-30"
               href=""
             >
               IndiaMart
             </Link>
             <Dot />
             <Link
-              className="hover:text-30 w-fit tracking-wider transition-all"
+              className="w-fit tracking-wider transition-all hover:text-30"
               href="https://wa.me/9007992282"
             >
               WhatsApp
             </Link>
           </div>
-          <div className="flex flex-col gap-1 px-1 font-mono text-xs font-light lg:text-sm">
+          <div className="flex flex-col gap-1 px-1 font-mono text-xs font-light">
             <Link href="mailto:tarun.choudhury@interior-designers.in">
               tarun.choudhury@interior-designers.in
             </Link>
@@ -52,7 +52,7 @@ const Footer = () => {
                 i.index < 6 && (
                   <Link
                     key={i.index}
-                    className="hover:text-30 mb-3 w-fit tracking-wider transition-all md:mb-2"
+                    className="mb-3 w-fit tracking-wider transition-all hover:text-30 md:mb-2"
                     href={i.href}
                   >
                     {i.title}
@@ -68,7 +68,7 @@ const Footer = () => {
                 i.index >= 6 && (
                   <Link
                     key={i.index}
-                    className="hover:text-30 mb-3 w-fit tracking-wider transition-all md:mb-2"
+                    className="mb-3 w-fit tracking-wider transition-all hover:text-30 md:mb-2"
                     href={i.href}
                   >
                     {i.title}
