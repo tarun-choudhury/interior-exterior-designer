@@ -13,11 +13,9 @@ const useLogin = () => {
       const response = await axios.post('/api/auth/login', data)
       if (response.data.error) throw new Error(response.data.error)
       if (response.data.success !== true) throw new Error(response.data.message)
-      console.log('Login successful', response.data)
       toast.success('Login successful')
       router.push('/create-items')
     } catch (error: any) {
-      console.error('Login failed', error.message)
       toast.error(error.message)
     } finally {
       setLoading(false)

@@ -26,8 +26,6 @@ const DelItem = () => {
   }
 
   const handleDelete = async () => {
-    console.log(selectedIds)
-    console.log(selectedPublicIds)
     if (selectedIds.length === 0 || selectedPublicIds.length === 0) return
 
     await delItems({

@@ -11,11 +11,9 @@ const useLogout = () => {
     setLoading(true)
     try {
       await axios.get('/api/auth/logout')
-      console.log('Logout successful')
       toast.success('Logout successful')
       router.push('/login')
     } catch (error: any) {
-      console.error('Login failed', error.message)
       toast.error(error.message)
     } finally {
       setLoading(false)

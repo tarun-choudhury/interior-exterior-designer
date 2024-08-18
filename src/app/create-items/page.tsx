@@ -27,7 +27,6 @@ const AddItem = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault
-    console.log(inputs)
 
     const formData = new FormData(e.currentTarget)
     formData.append('image', inputs.image as Blob)
@@ -35,7 +34,6 @@ const AddItem = () => {
     formData.append('price', String(inputs.price))
     formData.append('desc', inputs.desc)
     formData.append('category', inputs.category)
-    console.log('formData', formData)
     await addItem(formData)
   }
 

@@ -8,10 +8,7 @@ connect()
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('inside DELETE in api items')
     const { itemIds, publicIds } = await request.json()
-    console.log('itemIds:', itemIds)
-    console.log('publicIds:', publicIds)
 
     if (
       !itemIds ||
@@ -26,12 +23,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(response)
     }
 
-    console.log('itemIds:', itemIds)
-    console.log('publicIds:', publicIds)
-
     publicIds.forEach(async (public_id: string) => {
       const response = await deleteImg(public_id)
-      if (response !== 'ok') {
+      if (response === 'Image deletion failed') {
         throw new Error('Image deletion failed')
       }
     })

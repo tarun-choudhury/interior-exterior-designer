@@ -9,12 +9,7 @@ connect()
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('Inside POST in api add-item')
-
-    // const form = new formidable.IncomingForm()
-    // console.log(await request.formData())
     const form = await request.formData()
-    console.log('form', form)
     const image = form.get('image') as File
     const title = form.get('title') as string
     const price = form.get('price') as unknown as number
@@ -29,15 +24,6 @@ export async function POST(request: NextRequest) {
       })
 
     const data: any = await uploadImg({ file: image, folder: 'items' })
-
-    console.log('data', data)
-
-    // const response = NextResponse.json({
-    //   message: data,
-    //   success: true
-    // })
-
-    // return response
 
     let categoryCluster = await Category.findOne({ name: category })
 
@@ -54,10 +40,8 @@ export async function POST(request: NextRequest) {
       desc,
       category
     })
-    console.log('before if in api add-item')
     if (item) {
       categoryCluster.items.push(item._id)
-      console.log('Item added')
       await item.save()
       await categoryCluster.save()
 
