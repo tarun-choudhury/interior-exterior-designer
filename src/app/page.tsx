@@ -8,7 +8,7 @@ import EmblaCarousel from '@/components/home/hero-carousel'
 
 const Home = () => {
   const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true }
-  const SLIDE_COUNT = 10
+  const SLIDE_COUNT = 12
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
   return (
     <main className="mb-10 min-h-screen">

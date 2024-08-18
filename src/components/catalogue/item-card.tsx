@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
 import Button from '@/common/button'
@@ -12,6 +13,7 @@ interface ItemCardProps {
 }
 
 const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
+  const router = useRouter()
   const descRef = useRef<HTMLParagraphElement>(null)
   const [showMore, setShowMore] = useState(false)
   const [showLink, setShowLink] = useState(false)
@@ -61,7 +63,7 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
       <div className="mt-auto">
         <Button
           loading={false}
-          onclick={() => {}}
+          onclick={() => {router.push('mailto:tarun.choudhury@interior-designers.in')}}
           text="Place Order"
           type="button"
           width={0}
