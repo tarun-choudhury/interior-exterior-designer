@@ -35,7 +35,7 @@ const Nav = () => {
   return (
     <nav className="fixed z-10 flex h-16 w-full items-center justify-between bg-60-light px-4 shadow-sm">
       <Link
-        className="text-xl text-primary transition-all duration-300 md:text-3xl md:hover:tracking-widest"
+        className="text-30 text-xl transition-all duration-300 md:text-3xl md:hover:tracking-widest"
         href="/"
       >
         Interior Exterior Designer
@@ -43,7 +43,7 @@ const Nav = () => {
       <div className="flex items-center gap-10">
         <div className="group flex lg:hidden">
           <button
-            className={`size-fit p-0 ${open && 'text-primary'} active:scale-90`}
+            className={`size-fit p-0 ${open && 'text-30'} active:scale-90`}
             x-spread="trigger"
             onBlur={() => {
               setTimeout(() => {
@@ -64,13 +64,13 @@ const Nav = () => {
             {token ? (
               <div className="">
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-primary focus:ring-0 active:outline active:outline-1 active:outline-primary sm:text-sm"
+                  className="focus:text-30 active:outline-30 dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:ring-0 active:outline active:outline-1 sm:text-sm"
                   href="/create-items"
                 >
                   Add Item
                 </Link>
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-primary focus:ring-0 active:outline active:outline-1 active:outline-primary sm:text-sm"
+                  className="focus:text-30 active:outline-30 dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:ring-0 active:outline active:outline-1 sm:text-sm"
                   href="/delete-items"
                 >
                   Delete Item
@@ -88,19 +88,19 @@ const Nav = () => {
             ) : (
               <div className="">
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-primary focus:ring-0 active:outline active:outline-1 active:outline-primary sm:text-sm"
+                  className="focus:text-30 active:outline-30 dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:ring-0 active:outline active:outline-1 sm:text-sm"
                   href="/catalogue"
                 >
                   Catalogue
                 </Link>
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-primary focus:ring-0 active:outline active:outline-1 active:outline-primary sm:text-sm"
+                  className="focus:text-30 active:outline-30 dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:ring-0 active:outline active:outline-1 sm:text-sm"
                   href="/know-about-us"
                 >
                   About Us
                 </Link>
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-primary focus:ring-0 active:outline active:outline-1 active:outline-primary sm:text-sm"
+                  className="focus:text-30 active:outline-30 dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:ring-0 active:outline active:outline-1 sm:text-sm"
                   href="/contact-us"
                 >
                   Contact Us
@@ -114,13 +114,13 @@ const Nav = () => {
           {token ? (
             <div className="flex gap-10">
               <Link
-                className="text-lg transition-all hover:text-primary"
+                className="hover:text-30 text-lg transition-all"
                 href="/create-items"
               >
                 Add Item
               </Link>
               <Link
-                className="text-lg transition-all hover:text-primary"
+                className="hover:text-30 text-lg transition-all"
                 href="/delete-items"
               >
                 Delete Item
@@ -136,19 +136,19 @@ const Nav = () => {
           ) : (
             <div className="flex gap-10">
               <Link
-                className="text-lg transition-all hover:text-primary"
+                className="hover:text-30 text-lg transition-all"
                 href="/catalogue"
               >
                 Catalogue
               </Link>
               <Link
-                className="text-lg transition-all hover:text-primary"
+                className="hover:text-30 text-lg transition-all"
                 href="/know-about-us"
               >
                 About Us
               </Link>
               <Link
-                className="text-lg transition-all hover:text-primary"
+                className="hover:text-30 text-lg transition-all"
                 href="/contact-us"
               >
                 Contact Us

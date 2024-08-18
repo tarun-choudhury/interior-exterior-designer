@@ -12,14 +12,14 @@ const NotFound = () => {
       </p>
       {token ? (
         <Link
-          className="animate-pulse text-primary underline underline-offset-8"
+          className="text-30 animate-pulse underline underline-offset-8"
           href="/create-items"
         >
           Return to Crate Items
         </Link>
       ) : (
         <Link
-          className="animate-pulse text-primary underline underline-offset-8"
+          className="text-30 animate-pulse underline underline-offset-8"
           href="/"
         >
           Return to Home

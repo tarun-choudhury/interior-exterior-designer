@@ -27,7 +27,7 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
   return (
     <div
       key={key}
-      className={`flex w-full flex-col gap-2 ${!showMore && 'md:h-[27rem] xl:h-[27rem]'} bg-white p-6 outline outline-1 outline-primary transition-all hover:-translate-y-1 hover:shadow-lg md:p-4 2xl:w-64`}
+      className={`flex w-full flex-col gap-2 ${!showMore && 'md:h-[27rem] xl:h-[27rem]'} bg-white p-6 outline outline-1 outline-30 transition-all hover:-translate-y-1 hover:shadow-lg md:p-4 2xl:w-64`}
     >
       <div className="p-1">
         <div className="group relative">
@@ -39,20 +39,20 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
               src={image_url}
             />
           </div>
-          <div className="absolute -left-1 right-1 top-0.5 h-48 w-full rounded-none border border-custR bg-transparent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-1 md:h-40"></div>
+          <div className="absolute -left-1 right-1 top-0.5 h-48 w-full rounded-none border border-30 bg-transparent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-1 md:h-40"></div>
         </div>
       </div>
       <h1 className="md:text-lg lg:text-xl xl:text-lg">Rs {price}</h1>
       <h1 className="md:text-lg lg:text-xl xl:text-lg">{title}</h1>
       <p
         ref={descRef}
-        className={`whitespace-pre-line text-xs text-primary-light ${!showMore && 'max-h-16 overflow-hidden'} `}
+        className={`whitespace-pre-line text-xs text-30-light ${!showMore && 'max-h-16 overflow-hidden'} `}
       >
         {desc}
       </p>
       {showLink && (
         <button
-          className="w-fit text-xs text-primary"
+          className="w-fit text-xs text-30"
           onClick={() => {
             setShowMore(!showMore)
           }}
@@ -63,7 +63,9 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
       <div className="mt-auto">
         <Button
           loading={false}
-          onclick={() => {router.push('mailto:tarun.choudhury@interior-designers.in')}}
+          onclick={() => {
+            router.push('mailto:tarun.choudhury@interior-designers.in')
+          }}
           text="Place Order"
           type="button"
           width={0}

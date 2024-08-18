@@ -7,7 +7,7 @@ const RouteLoadingSkeleton = () => {
         Loading.....
       </h1>
       <progress
-        className="progress text-primary md:w-96 xl:w-96"
+        className="text-30 progress md:w-96 xl:w-96"
         max="100"
       ></progress>
     </div>
@@ -18,7 +18,10 @@ const ItemCardSkeleton = () => {
   const list = []
   for (let i = 0; i < 12; i++) {
     list.push(
-      <div key={i} className="col-span-1 flex w-full animate-pulse flex-col gap-2 p-6 outline outline-1 outline-60 md:h-[27rem] md:p-4 xl:h-[27rem] 2xl:w-64">
+      <div
+        key={i}
+        className="col-span-1 flex w-full animate-pulse flex-col gap-2 p-6 outline outline-1 outline-60 md:h-[27rem] md:p-4 xl:h-[27rem] 2xl:w-64"
+      >
         <div className="h-48 w-full rounded-none bg-60 md:h-40"></div>
         <div className="my-4 space-y-3">
           <div className="h-5 w-28 bg-60"></div>

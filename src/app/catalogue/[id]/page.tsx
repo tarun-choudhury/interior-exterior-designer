@@ -52,11 +52,11 @@ const Page = ({ params }: PageProps) => {
           {loading ? <ItemCardSkeleton /> : null}
         </div>
         {items.length === 0 && (
-          <div className="flex h-40 lg:h-full w-full lg:pb-40 xl:pb-0 flex-col items-center justify-center gap-4">
+          <div className="flex h-40 w-full flex-col items-center justify-center gap-4 lg:h-full lg:pb-40 xl:pb-0">
             <p className="xl:text-xl">No items found</p>
             <p className="xl:text-base">Browse other categories</p>
             <Link
-              className="animate-pulse text-primary underline underline-offset-8 lg:hidden"
+              className="animate-pulse text-30 underline underline-offset-8 lg:hidden"
               href="/catalogue"
             >
               Return to Catalogue

@@ -1,10 +1,10 @@
 const SearchIcon = () => {
   return (
     <svg
-      className="stroke-primary"
+      className="stroke-30"
       fill="none"
       height="24"
-      stroke="primary"
+      stroke="30"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"

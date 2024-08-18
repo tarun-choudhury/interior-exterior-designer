@@ -41,18 +41,16 @@ const AddItem = () => {
 
   return (
     <div className="flex flex-col gap-10 bg-60-light p-20 pb-32">
-      <h1 className="text-center text-3xl text-primary-light">
-        Add a New Product
-      </h1>
+      <h1 className="text-center text-3xl text-30-light">Add a New Product</h1>
       <form
-        className="mx-auto max-w-7xl space-y-4 bg-white p-10 shadow-lg outline outline-1 outline-primary"
+        className="mx-auto max-w-7xl space-y-4 bg-white p-10 shadow-lg outline outline-1 outline-30"
         onSubmit={handleSubmit}
       >
         <div className="space-y-1">
-          <label className="text-sm text-primary-light">Product Image</label>
+          <label className="text-sm text-30-light">Product Image</label>
           <input
             required
-            className="form-input rounded-none border-primary-light"
+            className="form-input rounded-none border-30-light"
             type="file"
             // value={inputs.image}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -62,10 +60,10 @@ const AddItem = () => {
           />
         </div>
         <div className="space-y-1">
-          <label className="text-sm text-primary-light">Product Title</label>
+          <label className="text-sm text-30-light">Product Title</label>
           <input
             required
-            className="form-input rounded-none border-primary-light"
+            className="form-input rounded-none border-30-light"
             placeholder="Enter title here"
             type="text"
             value={inputs.title}
@@ -75,10 +73,10 @@ const AddItem = () => {
           />
         </div>
         <div className="space-y-1">
-          <label className="text-sm text-primary-light">Product Price</label>
+          <label className="text-sm text-30-light">Product Price</label>
           <input
             required
-            className="form-input rounded-none border-primary-light"
+            className="form-input rounded-none border-30-light"
             placeholder="Enter price in Interior"
             type="number"
             value={inputs.price}
@@ -88,13 +86,11 @@ const AddItem = () => {
           />
         </div>
         <div className="space-y-1">
-          <label className="text-sm text-primary-light">
-            Product Description
-          </label>
+          <label className="text-sm text-30-light">Product Description</label>
           <textarea
             ref={textAreaRef}
             required
-            className="form-input resize-none rounded-none border-primary-light"
+            className="form-input resize-none rounded-none border-30-light"
             placeholder="Enter product description here"
             rows={1}
             style={{ scrollbarGutter: 'stable' }}
@@ -105,9 +101,9 @@ const AddItem = () => {
           />
         </div>
         <div className="space-y-1">
-          <label className="text-sm text-primary-light">Product Category</label>
+          <label className="text-sm text-30-light">Product Category</label>
           <select
-            className="form-input rounded-none border-primary-light"
+            className="form-input rounded-none border-30-light"
             id="color"
             value={inputs.category}
             onChange={(e: ChangeEvent<HTMLSelectElement>) =>

@@ -5,7 +5,7 @@ const Search = ({ setSearch }: any) => {
     <div className="form-icon shadow-md md:w-72 xl:-ml-3 xl:w-96">
       <SearchIcon />
       <input
-        className="form-input rounded-none border-primary placeholder:text-primary-light"
+        className="border-30 placeholder:text-30-light form-input rounded-none"
         placeholder="Search items..."
         type="text"
         onChange={(e) => setSearch(e.target.value)}

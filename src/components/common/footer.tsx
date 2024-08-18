@@ -6,39 +6,41 @@ import Dot from '@/assets/svg/dot'
 const Footer = () => {
   const links = jsonData.links
   return (
-    <footer className="mt-auto bottom-0 w-full bg-60 pt-10 xl:p-0">
+    <footer className="bottom-0 mt-auto w-full bg-60 pt-10 xl:p-0">
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
         <div className="col-span-1 flex flex-col gap-2 px-4 sm:col-span-2 sm:px-10 lg:col-span-3 xl:col-span-2 xl:my-20">
           <Link
-            className="w-fit text-3xl tracking-wider text-primary transition-all md:text-3xl lg:mb-2"
+            className="text-30 w-fit text-3xl tracking-wider transition-all md:text-3xl lg:mb-2"
             href=""
           >
             Interior Exterior Designer
           </Link>
           <div className="flex items-center px-1 text-sm">
             <Link
-              className="w-fit tracking-wider transition-all hover:text-primary"
+              className="hover:text-30 w-fit tracking-wider transition-all"
               href=""
             >
               Facebook
             </Link>
             <Dot />
             <Link
-              className="w-fit tracking-wider transition-all hover:text-primary"
+              className="hover:text-30 w-fit tracking-wider transition-all"
               href=""
             >
               IndiaMart
             </Link>
             <Dot />
             <Link
-              className="w-fit tracking-wider transition-all hover:text-primary"
+              className="hover:text-30 w-fit tracking-wider transition-all"
               href="https://wa.me/9007992282"
             >
               WhatsApp
             </Link>
           </div>
           <div className="flex flex-col gap-1 px-1 font-mono text-xs font-light lg:text-sm">
-            <Link href="mailto:tarun.choudhury@interior-designers.in">tarun.choudhury@interior-designers.in</Link>
+            <Link href="mailto:tarun.choudhury@interior-designers.in">
+              tarun.choudhury@interior-designers.in
+            </Link>
             <Link href="tel:9007992282">+91 90079 92282</Link>
             <Link href="tel:9748113277">+91 97481 13277</Link>
           </div>
@@ -50,7 +52,7 @@ const Footer = () => {
                 i.index < 6 && (
                   <Link
                     key={i.index}
-                    className="mb-3 w-fit tracking-wider transition-all hover:text-primary md:mb-2"
+                    className="hover:text-30 mb-3 w-fit tracking-wider transition-all md:mb-2"
                     href={i.href}
                   >
                     {i.title}
@@ -66,7 +68,7 @@ const Footer = () => {
                 i.index >= 6 && (
                   <Link
                     key={i.index}
-                    className="mb-3 w-fit tracking-wider transition-all hover:text-primary md:mb-2"
+                    className="hover:text-30 mb-3 w-fit tracking-wider transition-all md:mb-2"
                     href={i.href}
                   >
                     {i.title}
