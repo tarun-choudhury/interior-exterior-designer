@@ -20,13 +20,6 @@ const Footer = () => {
               className="w-fit tracking-wider transition-all hover:text-primary"
               href=""
             >
-              Instagram
-            </Link>
-            <Dot />
-            <Link
-              className="w-fit tracking-wider transition-all hover:text-primary"
-              href=""
-            >
               Facebook
             </Link>
             <Dot />
@@ -36,11 +29,18 @@ const Footer = () => {
             >
               IndiaMart
             </Link>
+            <Dot />
+            <Link
+              className="w-fit tracking-wider transition-all hover:text-primary"
+              href="https://wa.me/9007992282"
+            >
+              WhatsApp
+            </Link>
           </div>
           <div className="flex flex-col gap-1 px-1 font-mono text-xs font-light lg:text-sm">
-            <p>tarun.choudhury@interior-designers.in</p>
-            <p>+91 90079 92282</p>
-            <p>+91 97481 13277</p>
+            <Link href="mailto:tarun.choudhury@interior-designers.in">tarun.choudhury@interior-designers.in</Link>
+            <Link href="tel:9007992282">+91 90079 92282</Link>
+            <Link href="tel:9748113277">+91 97481 13277</Link>
           </div>
         </div>
         <div className="col-span-1 grid grid-cols-2 justify-items-center py-4 text-xs sm:gap-4 sm:pl-10 md:text-sm lg:col-span-3 lg:justify-items-start lg:text-base xl:col-span-2 xl:my-20 xl:p-0">

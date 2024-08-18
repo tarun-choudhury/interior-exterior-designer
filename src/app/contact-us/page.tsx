@@ -1,9 +1,11 @@
 'use client'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 import Button from '@/common/button'
 
 const ContactUs = () => {
+  const router = useRouter()
   return (
     <div className="mb-20 flex w-full flex-col items-start bg-60-light sm:mb-0 sm:flex-row">
       {/* Left Side: Contact Info */}
@@ -19,14 +21,14 @@ const ContactUs = () => {
         <div className="flex flex-col items-center gap-4 pr-10 md:justify-center xl:flex-row xl:justify-start xl:gap-10 xl:px-6">
           <Button
             loading={false}
-            onclick={() => {}}
+            onclick={() => {router.push('mailto:tarun.choudhury@interior-designers.in')}}
             text="Email"
             type="button"
             width={12}
           />
           <Button
             loading={false}
-            onclick={() => {}}
+            onclick={() => {router.push('https://wa.me/9007992282')}}
             text="WhatsApp"
             type="button"
             width={12}

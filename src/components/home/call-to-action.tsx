@@ -1,8 +1,11 @@
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 import Button from '@/common/button'
 
 const CallToAction = () => {
+
+  const router = useRouter()
   return (
     <div className="my-20 grid w-full grid-cols-1 items-center gap-6 overflow-visible rounded-none px-4 py-6 outline outline-1 outline-primary sm:my-8 sm:gap-8 sm:px-6 sm:py-8 md:grid-cols-4 md:gap-10 md:px-10 lg:my-12 lg:grid-cols-5 lg:pb-6 lg:pt-12">
       <div className="col-span-1 space-y-2 md:col-span-2 lg:col-span-3">
@@ -18,7 +21,7 @@ const CallToAction = () => {
         <div className="mx-auto w-fit md:ml-0 lg:ml-10">
           <Button
             loading={false}
-            onclick={() => {}}
+            onclick={() => {router.push('mailto:tarun.choudhury@interior-designers.in')}}
             text="Work With Us"
             type="button"
             width={12}
