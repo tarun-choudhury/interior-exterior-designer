@@ -38,7 +38,7 @@ const RootLayout = ({
         className={`${juliusSansOne.variable} ${merriweather.variable} ${italianno.variable} bg-60-light font-sans text-60-dark`}
       >
         <Nav />
-        <div className="pt-16">
+        <div className="pt-16 flex flex-col justify-between min-h-screen">
           {children}
           <Footer />
         </div>

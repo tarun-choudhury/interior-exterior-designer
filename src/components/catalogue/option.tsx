@@ -17,9 +17,9 @@ const Option = ({ categoryName, link }: OptionProps) => {
           fill
           alt={categoryName}
           className="scale-125 text-xs transition duration-300 ease-in-out group-hover:scale-105"
-          objectFit="cover"
+          object-fit="cover"
           sizes="(max-width: 1280px) 50vw, 25vw"
-          src={`/images/${categoryName}.png`}
+          src={`/catalogue images/${categoryName}.webp`}
         />
         <div className="absolute bottom-0 left-0 flex h-0 w-full flex-col justify-end overflow-hidden bg-gradient-to-t from-black px-12 text-center text-sm duration-300 ease-in-out group-hover:h-1/2 group-hover:py-3 md:group-hover:py-6 lg:group-hover:py-8 xl:group-hover:py-6">
           <h1 className="font-medium text-60 md:text-2xl lg:text-3xl xl:text-xl">

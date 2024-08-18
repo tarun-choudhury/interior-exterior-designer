@@ -32,7 +32,7 @@ const CallToAction = () => {
             alt="Hello"
             object-fit="cover"
             sizes="(max-width: 1224px) 33vw, 20vw"
-            src="/shipping.svg"
+            src="/other images/shipping.webp"
           />
         </div>
       </div>

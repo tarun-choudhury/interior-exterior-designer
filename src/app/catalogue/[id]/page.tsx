@@ -1,19 +1,30 @@
 'use client'
-import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { useState } from 'react'
 
 import jsonData from '@/assets/json/links.json'
+import { ItemCardSkeleton } from '@/common/skeleton'
 import Aside from '@/components/catalogue/aside'
 import ItemCard from '@/components/catalogue/item-card'
 import Search from '@/components/catalogue/search'
 import useGetItemsByCat from '@/hooks/use-get-items-by-category'
 
-const Page = () => {
+interface PageProps {
+  params: {
+    id: string
+  }
+}
+
+const Page = ({ params }: PageProps) => {
   const links = jsonData.links
-  const pathname = usePathname()
-  const id = pathname.split('/').pop()
+  const { id } = params
   const { loading, items } = useGetItemsByCat(id)
   const [search, setSearch] = useState('')
+
+  if (links.findIndex((i) => i.href === id) === -1) {
+    notFound()
+  }
 
   return (
     <div className="bg-60-light md:flex">
@@ -38,8 +49,20 @@ const Page = () => {
             .map((item: any) => (
               <ItemCard key={item._id} {...item} />
             ))}
-          {loading ? loading : null}
+          {loading ? <ItemCardSkeleton /> : null}
         </div>
+        {items.length === 0 && (
+          <div className="flex h-40 lg:h-full w-full lg:pb-40 xl:pb-0 flex-col items-center justify-center gap-4">
+            <p className="xl:text-xl">No items found</p>
+            <p className="xl:text-base">Browse other categories</p>
+            <Link
+              className="animate-pulse text-primary underline underline-offset-8 lg:hidden"
+              href="/catalogue"
+            >
+              Return to Catalogue
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   )

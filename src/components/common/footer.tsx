@@ -6,7 +6,7 @@ import Dot from '@/assets/svg/dot'
 const Footer = () => {
   const links = jsonData.links
   return (
-    <footer className="mt-auto w-full bg-60 pt-10 xl:p-0">
+    <footer className="mt-auto bottom-0 w-full bg-60 pt-10 xl:p-0">
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
         <div className="col-span-1 flex flex-col gap-2 px-4 sm:col-span-2 sm:px-10 lg:col-span-3 xl:col-span-2 xl:my-20">
           <Link

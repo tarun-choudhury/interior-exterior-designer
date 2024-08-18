@@ -37,11 +37,11 @@ const ContactUs = () => {
       {/* Right Side: Image */}
       <div className="relative hidden h-96 w-1/2 sm:block md:h-[28rem] xl:h-[30rem] 2xl:h-[32rem]">
         <Image
+          fill
           alt="Contact Us Image"
-          layout="fill"
-          objectFit="cover"
+          object-fit="cover"
           sizes="50vw"
-          src="/contact-us.svg"
+          src="/other images/contact-us.webp"
         />
       </div>
     </div>
