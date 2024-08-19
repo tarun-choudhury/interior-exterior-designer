@@ -9,23 +9,25 @@ const uploadImg = async ({ file, folder }: Input) => {
   const buffer = await file.arrayBuffer()
   const bytes = Buffer.from(buffer)
 
-  return new Promise((resolve, reject) => {
-    const uploadStream = cloudinary.uploader.upload_stream(
-      {
-        resource_type: 'auto',
-        folder,
-        // public_id: file.name
-      },
-      (error, result) => {
-        if (error) {
-          return reject(new Error(error.message))
+  const response = await new Promise((resolve) => {
+    cloudinary.uploader
+      .upload_stream(
+        {
+          resource_type: 'auto',
+          folder
+          // public_id: file.name
+        },
+        (error, result) => {
+          console.log("inside uploader")
+          if (error) {
+            console.error("while uploading error: ", error)
+          }
+          return resolve(result)
         }
-        resolve(result)
-      }
-    )
-
-    uploadStream.end(bytes)
+      )
+      .end(bytes)
   })
+  return response
 }
 
 export default uploadImg

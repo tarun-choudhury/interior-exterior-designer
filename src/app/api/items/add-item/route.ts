@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
           'Image, name, price, description, and category are all required',
         success: false
       })
-
+    
     const data: any = await uploadImg({ file: image, folder: 'items' })
 
     let categoryCluster = await Category.findOne({ name: category })
