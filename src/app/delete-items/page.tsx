@@ -8,11 +8,10 @@ import { DeleteCardSkeleton } from '@/common/skeleton'
 import useDelItems from '@/hooks/use-del-items'
 import useGetAllItems from '@/hooks/use-get-all-items'
 
-
-
 const DelItem = () => {
   const [reload, setReload] = useState(false)
-  const { loading: getLoading, items } = useGetAllItems(reload)
+  const [items, setItems] = useState([])
+  const { loading: getLoading } = useGetAllItems(setItems)
   const { loading: delLoading, delItems } = useDelItems()
   const [selectedIds, setSelectedIds] = useState<string[]>([])
   const [selectedPublicIds, setSelectedPublicIds] = useState<string[]>([])
@@ -33,7 +32,10 @@ const DelItem = () => {
     await delItems({
       itemIds: selectedIds,
       publicIds: selectedPublicIds,
-      setSelectedIds
+      setItemIds: setSelectedIds,
+      setPublicIds: setSelectedPublicIds,
+      items,
+      setItems
     })
     setReload(!reload)
   }

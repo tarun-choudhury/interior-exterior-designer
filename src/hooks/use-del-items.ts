@@ -1,13 +1,20 @@
 import axios from 'axios'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
 const useDelItems = () => {
-  const router = useRouter()
+  // const router = useRouter()
   const [loading, setLoading] = useState(false)
 
-  const delItems = async ({ itemIds, publicIds, setSelectedIds }: any) => {
+  const delItems = async ({
+    itemIds,
+    publicIds,
+    setItemIds,
+    setPublicIds,
+    items,
+    setItems
+  }: any) => {
     setLoading(true)
     try {
       const jsonObject = { itemIds, publicIds }
@@ -16,8 +23,10 @@ const useDelItems = () => {
       if (response.data.success !== true) throw new Error(response.data.message)
       toast.success('Items deleted successfully')
 
-      setSelectedIds([])
-      router.push('/delete-items')
+      setItems(items.filter((item: any) => !itemIds.includes(item._id)))
+      setItemIds([])
+      setPublicIds([])
+      // router.push('/delete-items')
     } catch (error: any) {
       toast.error(error.message)
     } finally {
