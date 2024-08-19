@@ -28,7 +28,6 @@ const Nav = () => {
   }, [])
 
   const handleSubmit = async () => {
-    console.log('logout/ui')
     await logout()
   }
 

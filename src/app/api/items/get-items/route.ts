@@ -7,7 +7,6 @@ connect()
 
 export async function GET() {
   try {
-    console.log('Inside GET in api items')
     const items = await Item.find()
 
     if (!items) {

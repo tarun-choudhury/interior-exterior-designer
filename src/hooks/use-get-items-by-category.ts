@@ -12,7 +12,6 @@ const useGetItemsByCat = (id: any) => {
         if (response.data.error) throw new Error(response.data.error)
         if (response.data.success !== true)
           throw new Error(response.data.message)
-        console.log('Items fetched', response.data.items)
         setItems(response.data.items)
       } catch (error: any) {
         console.error('Items fetch failed', error.message)
