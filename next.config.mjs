@@ -4,7 +4,7 @@ const nextConfig = {
     return {
       fallback: [
         {
-          source: '/:path*',
+          source: '/api/:path*',
           destination: `https://interior-exterior-designer-git-main-tarun-choudhurys-projects.vercel.app/:path*`,
         },
       ],
