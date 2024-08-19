@@ -53,7 +53,7 @@ const Footer = () => {
                   <Link
                     key={i.index}
                     className="mb-3 w-fit tracking-wider transition-all hover:text-30 md:mb-2"
-                    href={i.href}
+                    href={`/catalogue/${i.href}`}
                   >
                     {i.title}
                   </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
                   <Link
                     key={i.index}
                     className="mb-3 w-fit tracking-wider transition-all hover:text-30 md:mb-2"
-                    href={i.href}
+                    href={`/catalogue/${i.href}`}
                   >
                     {i.title}
                   </Link>

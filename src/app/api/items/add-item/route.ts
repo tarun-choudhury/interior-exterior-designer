@@ -23,10 +23,7 @@ export async function POST(request: NextRequest) {
         success: false
       })
     
-    console.log('before uploadImg')
     const data: any = await uploadImg({ file: image, folder: 'items' })
-    console.log('after uploadImg')
-    console.log(data)
 
     let categoryCluster = await Category.findOne({ name: category })
 

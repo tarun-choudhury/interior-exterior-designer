@@ -8,12 +8,14 @@ import { DeleteCardSkeleton } from '@/common/skeleton'
 import useDelItems from '@/hooks/use-del-items'
 import useGetAllItems from '@/hooks/use-get-all-items'
 
+
+
 const DelItem = () => {
   const [reload, setReload] = useState(false)
   const { loading: getLoading, items } = useGetAllItems(reload)
   const { loading: delLoading, delItems } = useDelItems()
-  const [selectedIds, setSelectedIds] = useState([])
-  const [selectedPublicIds, setSelectedPublicIds] = useState([])
+  const [selectedIds, setSelectedIds] = useState<string[]>([])
+  const [selectedPublicIds, setSelectedPublicIds] = useState<string[]>([])
 
   const handleSelect = (id: never, publicId: never) => {
     if (selectedIds.includes(id) && selectedPublicIds.includes(publicId)) {
