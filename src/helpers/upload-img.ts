@@ -9,23 +9,21 @@ const uploadImg = async ({ file, folder }: Input) => {
   const buffer = await file.arrayBuffer()
   const bytes = Buffer.from(buffer)
 
-  const response = new Promise((resolve, reject) => {
-    cloudinary.uploader
-      .upload_stream(
-        {
-          resource_type: 'auto',
-          folder
-          // public_id: file.name
-        },
-        (error, result) => {
-          if (error) {
-            return reject("Getting Rejected")
-          }
-          return resolve(result)
+  const response = await cloudinary.uploader
+    .upload_stream(
+      {
+        resource_type: 'auto',
+        folder
+        // public_id: file.name
+      },
+      (error, result) => {
+        if (error) {
+          return 'Getting Rejected'
         }
-      )
-      .end(bytes)
-  })
+        return result
+      }
+    )
+    .end(bytes)
   return response
 }
 
