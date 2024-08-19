@@ -51,6 +51,7 @@ const DelItem = () => {
             }
           >
             <input
+              readOnly
               checked={selectedIds.includes(item._id as never)}
               type="checkbox"
             />

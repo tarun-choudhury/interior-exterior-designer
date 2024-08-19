@@ -17,7 +17,7 @@ const useDelItems = () => {
       toast.success('Items deleted successfully')
 
       setSelectedIds([])
-      router.push('/delete-item')
+      router.push('/delete-items')
     } catch (error: any) {
       toast.error(error.message)
     } finally {

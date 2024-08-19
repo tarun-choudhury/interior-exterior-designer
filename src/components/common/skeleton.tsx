@@ -37,7 +37,7 @@ const DeleteCardSkeleton = () => {
   const list = []
   for (let i = 0; i < 7; i++) {
     list.push(
-      <li className="flex flex-col justify-end gap-1 p-4">
+      <li key={i} className="flex flex-col justify-end gap-1 p-4">
         <div className="space-y-2 object-bottom">
           <div className="h-5 w-20 animate-pulse bg-60"></div>
           <div className="h-5 w-10 animate-pulse bg-60"></div>
