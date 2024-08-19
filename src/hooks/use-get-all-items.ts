@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
-const useGetAllItems = ( setItems: any ) => {
+const useGetAllItems = (setItems: any) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -14,13 +15,13 @@ const useGetAllItems = ( setItems: any ) => {
           throw new Error(response.data.message)
         setItems(response.data.items)
       } catch (error: any) {
-        console.error('Items fetch failed', error.message)
+        toast.error('Items fetch failed:', error.message)
       } finally {
         setLoading(false)
       }
     }
     getItems()
-  }, [])
+  }, [setItems])
 
   return { loading }
 }

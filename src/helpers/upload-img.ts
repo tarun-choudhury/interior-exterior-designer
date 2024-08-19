@@ -18,7 +18,6 @@ const uploadImg = async ({ file, folder }: Input) => {
           // public_id: file.name
         },
         (error, result) => {
-          console.log("inside uploader")
           if (error) {
             console.error("while uploading error: ", error)
           }

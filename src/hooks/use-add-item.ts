@@ -17,8 +17,7 @@ const useAddItem = () => {
       if (response.data.success !== true) throw new Error(response.data.message)
       toast.success('Item added successfully')
     } catch (error: any) {
-      console.error('Item addition failed', error.message)
-      toast.error(error.message)
+      toast.error('items add failed:', error.message)
     } finally {
       setLoading(false)
     }

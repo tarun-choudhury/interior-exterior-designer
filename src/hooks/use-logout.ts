@@ -16,7 +16,7 @@ const useLogout = () => {
       toast.success('Logout successful')
       router.push('/login')
     } catch (error: any) {
-      toast.error(error.message)
+      toast.error('Logout failed:', error.message)
     } finally {
       setLoading(false)
     }

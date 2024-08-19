@@ -8,7 +8,6 @@ connect()
 export async function GET() {
   try {
     const items = await Item.find()
-    console.log(items.length)
 
     if (!items) {
       const response = { message: 'No items found', success: false }

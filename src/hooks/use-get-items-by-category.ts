@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
 const useGetItemsByCat = (id: any) => {
   const [loading, setLoading] = useState(true)
@@ -14,7 +15,7 @@ const useGetItemsByCat = (id: any) => {
           throw new Error(response.data.message)
         setItems(response.data.items)
       } catch (error: any) {
-        console.error('Items fetch failed', error.message)
+        toast.error('Items fetch failed:', error.message)
       } finally {
         setLoading(false)
       }
