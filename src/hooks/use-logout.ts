@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
+import Cookies from "js-cookie"
 
 const useLogout = () => {
   const router = useRouter()
@@ -11,6 +12,7 @@ const useLogout = () => {
     setLoading(true)
     try {
       await axios.get('/api/auth/logout')
+      Cookies.remove('token')
       toast.success('Logout successful')
       router.push('/login')
     } catch (error: any) {
