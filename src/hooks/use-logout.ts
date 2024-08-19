@@ -1,8 +1,8 @@
 import axios from 'axios'
+import Cookies from 'js-cookie'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-import Cookies from "js-cookie"
 
 const useLogout = () => {
   const router = useRouter()
