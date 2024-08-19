@@ -5,7 +5,7 @@ const nextConfig = {
       fallback: [
         {
           source: '/:path*',
-          destination: `https://interior-exterior-designer-392dr7l1q-tarun-choudhurys-projects.vercel.app/:path*`,
+          destination: `https://interior-exterior-designer-git-main-tarun-choudhurys-projects.vercel.app/:path*`,
         },
       ],
     }
