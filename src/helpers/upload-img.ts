@@ -9,8 +9,8 @@ const uploadImg = async ({ file, folder }: Input) => {
   const buffer = await file.arrayBuffer()
   const bytes = Buffer.from(buffer)
 
-  return new Promise((resolve, reject) => {
-    const uploadStream = cloudinary.uploader.upload_stream(
+  const response = new Promise(async (resolve, reject) => {
+    await cloudinary.uploader.upload_stream(
       {
         resource_type: 'auto',
         folder,
@@ -18,14 +18,13 @@ const uploadImg = async ({ file, folder }: Input) => {
       },
       (error, result) => {
         if (error) {
-          return reject(new Error(error.message))
+          reject(new Error(error.message))
         }
-        resolve(result)
+        return resolve(result)
       }
-    )
-
-    uploadStream.end(bytes)
+    ).end(bytes)
   })
+  return response
 }
 
 export default uploadImg
