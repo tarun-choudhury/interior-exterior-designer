@@ -40,13 +40,7 @@ export async function POST(request: NextRequest) {
       message: 'Login successful',
       success: true
     })
-    response.cookies.set('token', token, {
-      // httpOnly: true,
-      secure: true, // Ensures that the cookie is only sent over HTTPS
-      sameSite: 'lax', // Prevents CSRF attacks while still allowing cookies to be sent on top-level navigations
-      path: '/', // Ensures the cookie is available on all routes
-      maxAge: 60 * 60 // 1 hr
-    })
+    response.cookies.set('token', token)
     return response
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 })
