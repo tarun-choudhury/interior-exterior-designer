@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       success: true
     })
     response.cookies.set('token', token, {
-      httpOnly: true,
+      // httpOnly: true,
       secure: true, // Ensures that the cookie is only sent over HTTPS
       sameSite: 'lax', // Prevents CSRF attacks while still allowing cookies to be sent on top-level navigations
       path: '/', // Ensures the cookie is available on all routes
