@@ -19,7 +19,10 @@ const useAddItem = () => {
       if (response.data.error) throw new Error(response.data.error)
       if (response.data.success !== true) throw new Error(response.data.message)
       toast.success('Item added successfully')
+      console.log('Added Item: ', response.data.item)
+      console.log('globalItems before Add: ', globalItems)
       setGlobalItems([...globalItems, response.data.item])
+      console.log('globalItems after Add: ', globalItems)
     } catch (error: any) {
       toast.error('items add failed:', error.message)
     } finally {
