@@ -22,8 +22,9 @@ export async function POST(request: NextRequest) {
           'Image, name, price, description, and category are all required',
         success: false
       })
-    
+
     const data: any = await uploadImg({ file: image, folder: 'items' })
+    if (data === 'Image upload failed') throw new Error(data)
 
     let categoryCluster = await Category.findOne({ name: category })
 
@@ -46,6 +47,7 @@ export async function POST(request: NextRequest) {
       await categoryCluster.save()
 
       const response = NextResponse.json({
+        item,
         message: 'Item added successfully',
         success: true
       })

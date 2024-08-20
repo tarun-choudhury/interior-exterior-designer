@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     publicIds.forEach(async (public_id: string) => {
       const response = await deleteImg(public_id)
       if (response === 'Image deletion failed') {
-        throw new Error('Image deletion failed')
+        throw new Error(response)
       }
     })
 

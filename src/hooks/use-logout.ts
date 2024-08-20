@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Cookies from 'js-cookie'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
@@ -11,10 +12,11 @@ const useLogout = () => {
     setLoading(true)
     try {
       await axios.get('/api/auth/logout')
+      Cookies.remove('token')
       toast.success('Logout successful')
       router.push('/login')
     } catch (error: any) {
-      toast.error(error.message)
+      toast.error('Logout failed:', error.message)
     } finally {
       setLoading(false)
     }

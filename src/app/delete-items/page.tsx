@@ -1,21 +1,20 @@
 'use client'
-
 import Image from 'next/image'
 import { useState } from 'react'
+import toast from 'react-hot-toast'
 
 import Button from '@/common/button'
 import { DeleteCardSkeleton } from '@/common/skeleton'
+import useDeleteItemsState from '@/global/delete-items-state'
 import useDelItems from '@/hooks/use-del-items'
 import useGetAllItems from '@/hooks/use-get-all-items'
 
-
-
 const DelItem = () => {
-  const [reload, setReload] = useState(false)
-  const { loading: getLoading, items } = useGetAllItems(reload)
+  const { loading: getLoading }: any = useGetAllItems()
   const { loading: delLoading, delItems } = useDelItems()
   const [selectedIds, setSelectedIds] = useState<string[]>([])
   const [selectedPublicIds, setSelectedPublicIds] = useState<string[]>([])
+  const { globalItems }: any = useDeleteItemsState()
 
   const handleSelect = (id: never, publicId: never) => {
     if (selectedIds.includes(id) && selectedPublicIds.includes(publicId)) {
@@ -28,14 +27,17 @@ const DelItem = () => {
   }
 
   const handleDelete = async () => {
-    if (selectedIds.length === 0 || selectedPublicIds.length === 0) return
+    if (selectedIds.length === 0 || selectedPublicIds.length === 0) {
+      toast.error('No items selected')
+      return
+    }
 
     await delItems({
       itemIds: selectedIds,
       publicIds: selectedPublicIds,
-      setSelectedIds
+      setItemIds: setSelectedIds,
+      setPublicIds: setSelectedPublicIds
     })
-    setReload(!reload)
   }
 
   return (
@@ -44,7 +46,7 @@ const DelItem = () => {
         Delete Multiple Items
       </h1>
       <ul className="flex flex-wrap gap-10">
-        {items.map((item: any) => (
+        {globalItems.map((item: any) => (
           <li
             key={item._id}
             className={`cursor-pointer p-4 outline outline-1 outline-30 transition-all hover:-translate-y-1 hover:shadow-lg ${selectedIds.includes(item._id as never) && 'bg-10'}`}

@@ -1,29 +1,33 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
-const useGetAllItems = ( reload: boolean ) => {
+import useDeleteItemsState from '@/global/delete-items-state'
+
+const useGetAllItems = () => {
   const [loading, setLoading] = useState(true)
-  const [items, setItems] = useState([])
+  const { setGlobalItems }: any = useDeleteItemsState()
 
   useEffect(() => {
     const getItems = async () => {
+      setLoading(true)
       try {
         const response = await axios.get(`/api/items/get-items`)
 
         if (response.data.error) throw new Error(response.data.error)
         if (response.data.success !== true)
           throw new Error(response.data.message)
-        setItems(response.data.items)
+        const data = response.data.items
+        await setGlobalItems(data)
       } catch (error: any) {
-        console.error('Items fetch failed', error.message)
+        toast.error('Items fetch failed:', error.message)
       } finally {
         setLoading(false)
       }
     }
     getItems()
-  }, [reload])
-
-  return { loading, items }
+  }, [setGlobalItems])
+  return {loading}
 }
 
 export default useGetAllItems

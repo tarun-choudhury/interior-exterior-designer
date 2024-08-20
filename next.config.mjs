@@ -1,15 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
-    return {
-      fallback: [
-        {
-          source: '/api/:path*',
-          destination: `https://interior-exterior-designer-git-main-tarun-choudhurys-projects.vercel.app/:path*`,
-        },
-      ],
-    }
-  },
+  // async rewrites() {
+  //   return {
+  //     fallback: [
+  //       {
+  //         source: '/api/:path*',
+  //         destination: `https://interior-exterior-designer-git-main-tarun-choudhurys-projects.vercel.app/:path*`,
+  //       },
+  //     ],
+  //   }
+  // },
   images: {
     remotePatterns: [
       {

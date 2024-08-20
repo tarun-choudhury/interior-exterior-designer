@@ -16,7 +16,7 @@ const useLogin = () => {
       toast.success('Login successful')
       router.push('/create-items')
     } catch (error: any) {
-      toast.error(error.message)
+      toast.error('Login failed:', error.message)
     } finally {
       setLoading(false)
     }

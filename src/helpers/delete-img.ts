@@ -5,7 +5,7 @@ const deleteImg = async (public_id: string) => {
     const result = await cloudinary.uploader.destroy(public_id)
     return result
   } catch (error: any) {
-    throw new Error('Image deletion failed')
+    return("Image deletion failed")
   }
 }
 
