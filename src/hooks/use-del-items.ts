@@ -22,7 +22,7 @@ const useDelItems = () => {
       if (response.data.success !== true) throw new Error(response.data.message)
       toast.success('Items deleted successfully')
       console.log('globalItems before Del: ', globalItems)
-      setGlobalItems(globalItems.filter((item: any) => !itemIds.includes(item._id)))
+      await setGlobalItems(globalItems.filter((item: any) => !itemIds.includes(item._id)))
       console.log('globalItems after Del: ', globalItems)
       setItemIds([])
       setPublicIds([])

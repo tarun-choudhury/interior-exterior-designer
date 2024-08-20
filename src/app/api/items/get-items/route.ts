@@ -5,6 +5,7 @@ import Item from '@/models/item'
 
 connect()
 
+export const revalidate = 1;
 export async function GET() {
   try {
     const items = await Item.find()

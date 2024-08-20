@@ -17,8 +17,9 @@ const useGetAllItems = () => {
         if (response.data.error) throw new Error(response.data.error)
         if (response.data.success !== true)
           throw new Error(response.data.message)
-        console.log('All Items Fetched:', response.data.items)
-        setGlobalItems(response.data.items)
+        const data = response.data.items
+        console.log('All Items Fetched:', data)
+        await setGlobalItems(data)
         console.log('Global Items after Fetch:', globalItems)
       } catch (error: any) {
         toast.error('Items fetch failed:', error.message)
