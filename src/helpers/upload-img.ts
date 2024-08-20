@@ -15,11 +15,10 @@ const uploadImg = async ({ file, folder }: Input) => {
         {
           resource_type: 'auto',
           folder
-          // public_id: file.name
         },
         (error, result) => {
           if (error) {
-            console.error("while uploading error: ", error)
+            return "Image upload failed"
           }
           return resolve(result)
         }

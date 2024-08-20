@@ -24,6 +24,7 @@ export async function POST(request: NextRequest) {
       })
 
     const data: any = await uploadImg({ file: image, folder: 'items' })
+    if (data === 'Image upload failed') throw new Error(data)
 
     let categoryCluster = await Category.findOne({ name: category })
 

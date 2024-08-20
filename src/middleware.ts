@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
 
   const isProtectedPath = path === '/create-items' || path === '/delete-items'
 
-  const token = request.cookies.get('token')?.value || 0
+  const token = request.cookies.get('token')?.value || ''
 
   if (isProtectedPath && !token) {
     return NextResponse.redirect(new URL('/', request.nextUrl))
