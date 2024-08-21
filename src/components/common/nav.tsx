@@ -58,18 +58,18 @@ const Nav = () => {
             <HamburgerMenu />
           </button>
           <div
-            className={`dropdown-list ${!open && 'hidden'} right-4 top-14 space-y-2 rounded-none bg-60-light shadow`}
+            className={`dropdown-list ${!open && 'hidden'} right-4 top-14 space-y-4 rounded-none bg-60-light p-4 shadow`}
           >
             {token ? (
               <div className="">
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
+                  className="dropdown-item rounded-none transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
                   href="/create-items"
                 >
                   Add Item
                 </Link>
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
+                  className="dropdown-item rounded-none transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
                   href="/delete-items"
                 >
                   Delete Item
@@ -87,19 +87,19 @@ const Nav = () => {
             ) : (
               <div className="">
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
+                  className="dropdown-item rounded-none transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
                   href="/catalogue"
                 >
                   Catalogue
                 </Link>
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
+                  className="dropdown-item rounded-none transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
                   href="/know-about-us"
                 >
                   About Us
                 </Link>
                 <Link
-                  className="dropdown-item rounded-none text-xs transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
+                  className="dropdown-item rounded-none transition-all hover:bg-60 focus:bg-60 focus:text-30 focus:ring-0 active:outline active:outline-1 active:outline-30 sm:text-sm"
                   href="/contact-us"
                 >
                   Contact Us

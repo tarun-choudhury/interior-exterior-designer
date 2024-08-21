@@ -68,7 +68,7 @@ const AboutUs = () => {
           <h1 className="ml-10 text-xl md:text-2xl xl:text-3xl">
             {data.whyChoseUs.title}
           </h1>
-          <ul className="flex list-disc flex-col font-serif font-light">
+          <ul className="flex list-disc flex-col font-serif text-xs font-light md:text-sm xl:text-base">
             {data.whyChoseUs.list.map((item, index) => (
               <li key={index} className="">
                 <h1 className="">
