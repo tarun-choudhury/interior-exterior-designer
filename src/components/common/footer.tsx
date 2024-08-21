@@ -32,7 +32,7 @@ const Footer = () => {
             <Dot />
             <Link
               className="w-fit tracking-wider transition-all hover:text-30"
-              href="https://wa.me/9007992282"
+              href="https://wa.me/91 9007992282"
             >
               WhatsApp
             </Link>

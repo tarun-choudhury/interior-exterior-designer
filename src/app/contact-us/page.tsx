@@ -28,7 +28,7 @@ const ContactUs = () => {
           />
           <Button
             loading={false}
-            onclick={() => {router.push('https://wa.me/9007992282')}}
+            onclick={() => {router.push('https://wa.me/91 9007992282')}}
             text="WhatsApp"
             type="button"
             width={12}
