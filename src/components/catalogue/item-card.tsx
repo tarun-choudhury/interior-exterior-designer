@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
 import Button from '@/common/button'
@@ -10,10 +9,20 @@ interface ItemCardProps {
   image_url: string
   price: number
   desc: string
+  setPopup: (popup: boolean) => void
+  setSelectedItem: (item: any) => void
+  userEmail: string
 }
 
-const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
-  const router = useRouter()
+const ItemCard = ({
+  title,
+  image_url,
+  price,
+  desc,
+  setPopup,
+  setSelectedItem,
+  userEmail
+}: ItemCardProps) => {
   const descRef = useRef<HTMLParagraphElement>(null)
   const [showMore, setShowMore] = useState(false)
   const [showLink, setShowLink] = useState(false)
@@ -26,7 +35,6 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
 
   return (
     <div
-      key={key}
       className={`flex w-full flex-col gap-2 ${!showMore && 'md:h-[27rem] xl:h-[27rem]'} bg-white p-6 outline outline-1 outline-30 transition-all hover:-translate-y-1 hover:shadow-lg md:p-4 2xl:w-64`}
     >
       <div className="p-1">
@@ -64,7 +72,11 @@ const ItemCard = ({ key, title, image_url, price, desc }: ItemCardProps) => {
         <Button
           loading={false}
           onclick={() => {
-            router.push('mailto:tarun.choudhury@interior-designers.in')
+            console.log('userEmail', userEmail)
+            console.log('IMAGE URL', image_url)
+            console.log('Type', typeof image_url)
+            setSelectedItem({ title, image_url, price, desc })
+            setPopup(true)
           }}
           text="Place Order"
           type="button"

@@ -26,7 +26,7 @@ const Login = () => {
           <input
             required
             className="form-input rounded-none border-30-light font-serif placeholder:font-sans"
-            placeholder="Enter title here"
+            placeholder="Enter your email here"
             type="email"
             value={email}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
