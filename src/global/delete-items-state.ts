@@ -6,7 +6,7 @@ interface DeleteItemsState {
 }
 
 const useDeleteItemsState = create((set) => ({
-  globalItems : [],
+  globalItems: [],
   setGlobalItems: (newItems: DeleteItemsState) => set({ globalItems: newItems })
 }))
 

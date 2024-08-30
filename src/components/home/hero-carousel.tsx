@@ -102,7 +102,7 @@ const EmblaCarousel = (props: PropType) => {
                       className="embla__slide__img embla__parallax__img lg:h-[44rem] xl:h-[calc(100vh-4rem)]"
                       height={100000}
                       quality={100}
-                      src={`/hero carousal images/${index+1}.webp`}
+                      src={`/hero carousal images/${index + 1}.webp`}
                       width={100000}
                     />
                   </div>

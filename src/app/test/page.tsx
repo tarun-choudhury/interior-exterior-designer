@@ -18,12 +18,14 @@ const Tage = () => {
 
   return (
     <div className="relative h-[calc(100vh-4rem)]">
-      {popup && <div className="absolute -top-16 z-10 h-screen w-full bg-60-dark/30"></div>}
+      {popup && (
+        <div className="absolute -top-16 z-10 h-screen w-full bg-60-dark/30"></div>
+      )}
       <button
         className="btn btn-light-primary"
         onClick={() => {
           console.log('userEmail', userEmail)
-          if(userEmail === '') setPopup(true)
+          if (userEmail === '') setPopup(true)
           else router.push('/test')
         }}
       >

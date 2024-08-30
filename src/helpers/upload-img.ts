@@ -18,7 +18,7 @@ const uploadImg = async ({ file, folder }: Input) => {
         },
         (error, result) => {
           if (error) {
-            return "Image upload failed"
+            return 'Image upload failed'
           }
           return resolve(result)
         }

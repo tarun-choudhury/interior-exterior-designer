@@ -1,4 +1,4 @@
-import { RouteLoadingSkeleton } from "@/common/skeleton"
+import { RouteLoadingSkeleton } from '@/common/skeleton'
 
 const Loading = () => {
   // You can add any UI inside Loading, including a Skeleton.
