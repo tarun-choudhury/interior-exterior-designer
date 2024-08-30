@@ -17,8 +17,7 @@ const CustomerBrands = () => {
             <Image
               fill
               alt="Customer Logo"
-              className="transition-all duration-300 hover:-translate-y-1"
-              object-fit="contain"
+              className="object-cover transition-all duration-300 hover:-translate-y-1"
               sizes="(max-width: 640px) 50vw, (max-width: 1224px) 33vw, (max-width: 1280px) 25vw, 20vw"
               src={`/icons/customer-${logo + 1}.svg`}
             />

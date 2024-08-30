@@ -34,7 +34,7 @@ const CallToAction = () => {
           <Image
             fill
             alt="Hello"
-            object-fit="cover"
+            className="object-cover"
             sizes="(max-width: 1224px) 33vw, 20vw"
             src="/other images/shipping.webp"
           />

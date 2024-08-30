@@ -21,14 +21,18 @@ const ContactUs = () => {
         <div className="flex flex-col items-center gap-4 pr-10 md:justify-center xl:flex-row xl:justify-start xl:gap-10 xl:px-6">
           <Button
             loading={false}
-            onclick={() => {router.push('mailto:tarun.choudhury@interior-designers.in')}}
+            onclick={() => {
+              router.push('mailto:tarun.choudhury@interior-designers.in')
+            }}
             text="Email"
             type="button"
             width={12}
           />
           <Button
             loading={false}
-            onclick={() => {router.push('https://wa.me/91 9007992282')}}
+            onclick={() => {
+              router.push('https://wa.me/91 9007992282')
+            }}
             text="WhatsApp"
             type="button"
             width={12}
@@ -41,7 +45,7 @@ const ContactUs = () => {
         <Image
           fill
           alt="Contact Us Image"
-          object-fit="cover"
+          className="object-cover"
           sizes="50vw"
           src="/other images/contact-us.webp"
         />

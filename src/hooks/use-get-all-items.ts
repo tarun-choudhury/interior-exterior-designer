@@ -27,7 +27,7 @@ const useGetAllItems = () => {
     }
     getItems()
   }, [setGlobalItems])
-  return {loading}
+  return { loading }
 }
 
 export default useGetAllItems
