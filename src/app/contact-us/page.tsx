@@ -45,7 +45,7 @@ const ContactUs = () => {
         <Image
           fill
           alt="Contact Us Image"
-          object-fit="cover"
+          className="object-cover"
           sizes="50vw"
           src="/other images/contact-us.webp"
         />

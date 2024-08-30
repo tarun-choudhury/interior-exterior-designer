@@ -16,8 +16,7 @@ const Option = ({ categoryName, link }: OptionProps) => {
         <Image
           fill
           alt={categoryName}
-          className="scale-125 text-xs transition duration-300 ease-in-out group-hover:scale-105 group-active:scale-100"
-          object-fit="cover"
+          className="scale-110 object-cover text-xs transition duration-300 ease-in-out group-hover:scale-100 group-active:scale-100"
           sizes="(max-width: 1280px) 50vw, 25vw"
           src={`/catalogue images/${categoryName}.webp`}
         />
