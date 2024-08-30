@@ -9,13 +9,6 @@ const useSendEmail = () => {
     const { title, image_url, price, desc } = message
     setLoading(true)
     try {
-      console.log('inside send email')
-      console.log('from:', from)
-      console.log('subject:', subject)
-      console.log('title:', title)
-      console.log('image_url:', image_url)
-      console.log('price:', price)
-      console.log('desc:', desc)
       const response = await axios.post('/api/email', {
         from,
         subject,

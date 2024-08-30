@@ -41,7 +41,6 @@ const Page = ({ params }: PageProps) => {
     if (email === '') toast.error('Email is required')
     else {
       if (userEmail === '') setUserEmail(email)
-      console.log('selectedItem:', selectedItem)
       sendEmail({
         from: email,
         subject: 'New Order Confirmation from Website',
@@ -137,6 +136,7 @@ const Page = ({ params }: PageProps) => {
             .map((item: any) => (
               <ItemCard
                 key={item._id}
+                loading={emailLoading}
                 {...item}
                 setPopup={setPopup}
                 setSelectedItem={setSelectedItem}

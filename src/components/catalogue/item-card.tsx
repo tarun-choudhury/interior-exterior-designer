@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Button from '@/common/button'
 
 interface ItemCardProps {
-  key: string
+  loading: boolean
   title: string
   image_url: string
   price: number
@@ -15,6 +15,7 @@ interface ItemCardProps {
 }
 
 const ItemCard = ({
+  loading,
   title,
   image_url,
   price,
@@ -70,7 +71,7 @@ const ItemCard = ({
       )}
       <div className="mt-auto">
         <Button
-          loading={false}
+          loading={loading}
           onclick={() => {
             console.log('userEmail', userEmail)
             console.log('IMAGE URL', image_url)
