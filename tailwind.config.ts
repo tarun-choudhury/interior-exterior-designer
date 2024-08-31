@@ -21,6 +21,11 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
       colors: {
+        primary: {
+          light: '#717568', // For lighter color
+          DEFAULT: '#984447', // Normal color
+          dark: '#FF6663' // Used for hover, active, etc.
+        },
         30: {
           light: '#717568', // For lighter color
           DEFAULT: '#984447', // Normal color
