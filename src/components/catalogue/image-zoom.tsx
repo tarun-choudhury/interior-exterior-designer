@@ -16,7 +16,13 @@ const ImageZoom = ({
   return (
     <>
       {imageZoom && (
-        <div className="fixed inset-x-0 top-0 z-20 h-screen bg-black/90 p-10">
+        <div className="fixed inset-x-0 top-0 z-20 flex h-screen flex-col items-end gap-4 bg-black/90 p-10 pb-20 md:gap-10 md:pb-[6.5rem]">
+          <button
+            className="block size-fit transition-all hover:scale-105"
+            onClick={() => setImageZoom(false)}
+          >
+            <XClose stroke="stroke-10" />
+          </button>
           <div className="relative size-full">
             <Image
               fill
@@ -25,12 +31,6 @@ const ImageZoom = ({
               quality={100}
               src={imageZoomLink}
             />
-            <button
-              className="absolute right-0 top-0 block size-10 w-fit stroke-10 transition-all hover:scale-105"
-              onClick={() => setImageZoom(false)}
-            >
-              <XClose stroke="stroke-10" />
-            </button>
           </div>
         </div>
       )}
