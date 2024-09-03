@@ -8,6 +8,7 @@ import jsonData from '@/assets/json/links.json'
 import { ItemCardSkeleton } from '@/common/skeleton'
 import Aside from '@/components/catalogue/aside'
 import EmailPopup from '@/components/catalogue/email-popup'
+import ImageZoom from '@/components/catalogue/image-zoom'
 import ItemCard from '@/components/catalogue/item-card'
 import Search from '@/components/catalogue/search'
 import useUserEmailState from '@/global/user-email-state'
@@ -28,6 +29,8 @@ const Page = ({ params }: PageProps) => {
   const [search, setSearch] = useState('')
   const [popup, setPopup] = useState<boolean>(false)
   const [email, setEmail] = useState<string>('')
+  const [imageZoomLink, setImageZoomLink] = useState<string>('')
+  const [imageZoom, setImageZoom] = useState<boolean>(false)
   const [selectedItem, setSelectedItem] = useState({
     title: '',
     image_url: '',
@@ -55,7 +58,7 @@ const Page = ({ params }: PageProps) => {
 
   return (
     <div className="relative bg-60-light md:flex">
-      {popup && (
+      {(popup || imageZoom) && (
         <div className="fixed top-0 z-10 h-screen w-full bg-60-dark/30"></div>
       )}
       <EmailPopup
@@ -65,6 +68,11 @@ const Page = ({ params }: PageProps) => {
         setEmail={setEmail}
         setPopup={setPopup}
         userEmail={userEmail}
+      />
+      <ImageZoom
+        imageZoom={imageZoom}
+        imageZoomLink={imageZoomLink}
+        setImageZoom={setImageZoom}
       />
       <Aside />
       <div className="mx-10 mb-10 flex flex-col gap-10 pb-20 pt-10 md:mx-4 md:basis-full md:py-20 lg:basis-4/5 xl:basis-5/6 xl:gap-10">
@@ -89,6 +97,8 @@ const Page = ({ params }: PageProps) => {
                 key={item._id}
                 loading={emailLoading}
                 {...item}
+                setImageZoom={setImageZoom}
+                setImageZoomLink={setImageZoomLink}
                 setPopup={setPopup}
                 setSelectedItem={setSelectedItem}
                 userEmail={userEmail}
