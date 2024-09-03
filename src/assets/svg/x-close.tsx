@@ -1,7 +1,11 @@
-const XClose = () => {
+interface XCloseProps {
+  stroke: string
+}
+
+const XClose = ({ stroke }: XCloseProps) => {
   return (
     <svg
-      className="stroke-30"
+      className={`${stroke}`}
       fill="none"
       height="24"
       stroke="currentColor"

@@ -9,6 +9,8 @@ interface ItemCardProps {
   image_url: string
   price: number
   desc: string
+  setImageZoom: (zoom: boolean) => void
+  setImageZoomLink: (link: string) => void
   setPopup: (popup: boolean) => void
   setSelectedItem: (item: any) => void
   userEmail: string
@@ -20,6 +22,8 @@ const ItemCard = ({
   image_url,
   price,
   desc,
+  setImageZoom,
+  setImageZoomLink,
   setPopup,
   setSelectedItem,
   userEmail
@@ -44,12 +48,18 @@ const ItemCard = ({
             <Image
               fill
               alt={title}
-              className="object-cover"
+              className="bg-60-light object-contain"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 33vw, (max-width: 1536px) 25vw, 20vw"
               src={image_url}
             />
           </div>
-          <div className="absolute -left-1 right-1 top-0.5 h-48 w-full rounded-none border border-30 bg-transparent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-1 md:h-40"></div>
+          <div
+            className="absolute -left-1 right-1 top-0.5 h-48 w-full rounded-none border border-30 bg-transparent transition-all hover:cursor-pointer group-hover:-translate-y-0.5 group-hover:translate-x-1 md:h-40"
+            onClick={() => {
+              setImageZoom(true)
+              setImageZoomLink(image_url)
+            }}
+          ></div>
         </div>
       </div>
       <h1 className="md:text-lg lg:text-xl xl:text-lg">Rs {price}</h1>
