@@ -62,7 +62,7 @@ const EmailPopup = ({
             className="ml-auto block w-fit transition-all hover:scale-105"
             onClick={() => setPopup(false)}
           >
-            <XClose />
+            <XClose stroke="stroke-30" />
           </button>
           <div className="space-y-4 p-6 pt-0">
             <h1 className="text-center text-xl">Confirm Order?</h1>
